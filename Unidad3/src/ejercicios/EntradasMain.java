@@ -31,20 +31,20 @@ public class EntradasMain {
 				System.out.println("3. Preferencia Alta");
 				System.out.println("4. Preferencia Baja");
 				respuesta2 = sc.nextInt();
-				
+
 				switch (respuesta2) {
 				case 1:
 					fnorte.mostrarEntradas();
 					break;
 				case 2:
 					fsur.mostrarEntradas();
-					break;					
+					break;
 				case 3:
 					palta.mostrarEntradas();
-					break;					
+					break;
 				case 4:
 					pbaja.mostrarEntradas();
-					break;					
+					break;
 				default:
 					System.err.println("Número inválido compañerete");
 					break;
@@ -60,18 +60,51 @@ public class EntradasMain {
 				System.out.println("4. Preferencia Baja: 40€");
 
 				break;
-				
+
 			case 3:
+				System.out.println("------------------");
+				System.out.println("----ELIGE ZONA----");
+				System.out.println("1. Fondo Norte");
+				System.out.println("2. Fondo Sur");
+				System.out.println("3. Preferencia Alta");
+				System.out.println("4. Preferencia Baja");
+				respuesta2 = sc.nextInt();
+				System.out.println("¿Cuántas entradas quieres?");
 				
+				int cantidad = sc.nextInt();
+				double total = 0;
+
+				switch (respuesta2) {
+				case 1:
+					total = fnorte.venderEntradas(cantidad);
+					break;
+				case 2:
+					total = fsur.venderEntradas(cantidad);
+					break;
+				case 3:
+					total = palta.venderEntradas(cantidad);
+					break;
+				case 4:
+					total = pbaja.venderEntradas(cantidad);
+					break;
+				default:
+					System.err.println("Número inválido");
+					break;
+				}
+				if (total > 0) {
+					System.out.println("Venta realizada. Total a pagar: " + total + "€");
+				}
 				break;
-				
+
 			default:
 				break;
 			}
-			
+
 		} while (respuesta != 4);
-		
+
 		System.out.println("Gracias por usar el gestor de entradas del Gipsy Colliseum");
+		
+		sc.close();
 	}
 
 }
