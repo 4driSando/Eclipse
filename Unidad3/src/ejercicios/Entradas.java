@@ -16,6 +16,8 @@ public class Entradas {
 		if (cantidad > numEntradas) {
 			System.out.println("No hay suficientes entradas en " + nombre);
 			cantidad = 0;
+		}else if (cantidad < 0){
+			System.err.println("Cantidad no válida compañerete!");
 		} else {
 			numEntradas -= cantidad;
 		}
