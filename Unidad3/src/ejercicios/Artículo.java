@@ -3,20 +3,22 @@ package ejercicios;
 public class Artículo {
 
 	private String nombre;
-	private int precio, stock;
+	private int stock;
 	private final double iva = 1.21;
+	private double precio;
 
-	public Artículo(String n, int p, int s) {
+	public Artículo(String n, double p, int s) {
 		this.setStock(s);
 		this.setPrecio(p);
 		this.setNombre(n);
 	}
 
+	public void mostrarProducto() {
+	    System.out.println("Nombre: " + nombre + ", Precio: " + precio + "€, Stock: " + stock);
+	}
+	
 	void setNombre(String n) {
-		if (nombre != null && nombre.length() <= 0) {
-			System.err.println("NOMBRE DE ARTÍCULO no válido");
-		}
-		nombre = n;
+		this.nombre = n;
 	}
 
 	String getNombre() {
@@ -27,22 +29,16 @@ public class Artículo {
 		return iva;
 	}
 
-	void setPrecio(int p) {
-		if (p <= 0) {
-			System.err.println("PRECIO inválido");
-		}
-		precio = p;
+	void setPrecio(double d) {
+		this.precio = d;
 	}
 
-	int getPrecio() {
+	double getPrecio() {
 		return precio;
 	}
 
 	void setStock(int s) {
-		if (s <= 0) {
-			System.err.println("No queda STOCK");
-		}
-		stock = s;
+		this.stock = s;
 	}
 
 	int getStock() {
