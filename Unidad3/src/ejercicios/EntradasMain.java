@@ -15,7 +15,7 @@ public class EntradasMain {
 
 		do {
 			System.out.println("--------------");
-			System.out.println("-----MENÚ-----");
+			System.out.println("MENÚ");
 			System.out.println("1. Mostrar número de entradas libres que hay en cada zona");
 			System.out.println("2. Mostrar precio por entrada en cada zona");
 			System.out.println("3. Vender entradas");
