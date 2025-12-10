@@ -13,6 +13,10 @@ public class Artículo {
 		this.setNombre(n);
 	}
 
+	public void mostrarLista() {
+		System.out.println(nombre + " " + precio + "€");
+	}
+	
 	public void mostrarProducto() {
 	    System.out.println("Nombre: " + nombre + ", Precio: " + precio + "€, Stock: " + stock);
 	}

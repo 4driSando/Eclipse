@@ -23,6 +23,7 @@ public class TiendaMain {
 			respuesta1 = sc.nextInt();
 
 			switch (respuesta1) {
+			// Agregar producto
 			case 1:
 				boolean insertado = false;
 
@@ -46,6 +47,7 @@ public class TiendaMain {
 				}
 				break;
 
+			// Mostrar todos los productos
 			case 2:
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
@@ -57,6 +59,7 @@ public class TiendaMain {
 				}
 				break;
 
+			// Buscar producto --- No funciona
 			case 3:
 				System.out.println("Introduzca el artículo deseado:");
 				sc.nextLine();
@@ -70,8 +73,31 @@ public class TiendaMain {
 					}
 					break;
 
+				
 				}
+			case 4:
+				System.out.println("Qué artículo desea comprar?");
+				for (int i = 0; i < catálogo.length; i++) {
+					if (catálogo[i] != null) {
+						System.out.print((i + 1) + ".");
+						catálogo[i].mostrarLista();
+					} else {
+						System.out.println((i + 1) + ". [Vacío]");
+					}
+				}
+				respuesta2 = sc.next();
+				if (respuesta2.equals("1")) {
+					// vender artículo 1
+				} else if (respuesta2.equals("2")) {
+					// vender artículo 2
+				} else if (respuesta2.equals("3")) {
+					// vender artículo 3
+				} else {
+					// syse: 
+				}
+				break; 
 			}
+			
 
 		} while (respuesta1 != 6);
 
