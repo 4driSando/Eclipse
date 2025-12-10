@@ -13,8 +13,33 @@ public class Artículo {
 		this.setNombre(n);
 	}
 
-	public void mostrarLista() {
-		System.out.println(nombre + " " + precio + "€");
+	public void añadirStock(int añadir) {
+		if (añadir > 0) {
+			stock += añadir;
+			System.out.println("Se han añadido " + añadir + " artículos del producto " + nombre);
+		} else {
+			System.err.println("No se pueden añadir negativos");
+		}
+	}
+	
+	public double venderArtículo(int cantidad) {
+		if (cantidad > stock) {
+			System.out.println("No hay suficientes artículos ("+nombre+")");
+			cantidad = 0;
+		}else if (cantidad < 0){
+			System.err.println("Cantidad no válida compañerete!");
+		} else {
+			stock -= cantidad;
+		}
+		return cantidad * precio;
+	}
+	
+	public void mostrarListaStock() {
+		System.out.println(nombre + " / " + stock + " unidades");
+	}
+	
+	public void mostrarListaPrecio() {
+		System.out.println(nombre + " / " + precio + "€");
 	}
 	
 	public void mostrarProducto() {

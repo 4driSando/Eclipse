@@ -19,7 +19,8 @@ public class TiendaMain {
 			System.out.println("3. Buscar producto por nombre");
 			System.out.println("4. Comprar producto");
 			System.out.println("5. Añadir stock a un producto");
-			System.out.println("6. Salir");
+			System.out.println("6. Borrar último producto agregado");
+			System.out.println("7. Salir");
 			respuesta1 = sc.nextInt();
 
 			switch (respuesta1) {
@@ -51,7 +52,7 @@ public class TiendaMain {
 			case 2:
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
-						System.out.print((i + 1) + ".");
+						System.out.print((i + 1) + ". ");
 						catálogo[i].mostrarProducto();
 					} else {
 						System.out.println((i + 1) + ". [Vacío]");
@@ -66,40 +67,86 @@ public class TiendaMain {
 				respuesta2 = sc.nextLine();
 				respuesta2.toLowerCase();
 				for (int i = 0; i < catálogo.length; i++) {
-					if (catálogo[i].getNombre() == respuesta2) {
+					if (catálogo[i].getNombre().equals(respuesta2)) {
+						System.out.println("Artículo encontrado");
 						catálogo[i].mostrarProducto();
 					} else {
 						System.err.println("Artículo no encontrado");
 					}
-					break;
-
-				
 				}
+				break;
+
+			// Vender producto
 			case 4:
 				System.out.println("Qué artículo desea comprar?");
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
-						System.out.print((i + 1) + ".");
-						catálogo[i].mostrarLista();
+						System.out.print((i + 1) + ". ");
+						catálogo[i].mostrarListaPrecio();
 					} else {
 						System.out.println((i + 1) + ". [Vacío]");
 					}
 				}
 				respuesta2 = sc.next();
-				if (respuesta2.equals("1")) {
-					// vender artículo 1
-				} else if (respuesta2.equals("2")) {
-					// vender artículo 2
-				} else if (respuesta2.equals("3")) {
-					// vender artículo 3
-				} else {
-					// syse: 
-				}
-				break; 
-			}
-			
 
-		} while (respuesta1 != 6);
+				System.out.println("Cuánta cantidad desea comprar?");
+				int cantidad = sc.nextInt();
+				double total = 0;
+
+				switch (respuesta2) {
+				case "1":
+					total = catálogo[0].venderArtículo(cantidad);
+					break;
+				case "2":
+					total = catálogo[1].venderArtículo(cantidad);
+					break;
+				case "3":
+					total = catálogo[2].venderArtículo(cantidad);
+					break;
+
+				default:
+					System.err.println("Número inválido");
+					break;
+				}
+				if (total > 0) {
+					System.out.println("Venta realizada. Total a pagar: " + total + "€");
+				}
+				break;
+
+			// Añadir stock
+			case 5:
+				System.out.println("A qué artículo le deseas añadir stock?");
+				for (int i = 0; i < catálogo.length; i++) {
+					if (catálogo[i] != null) {
+						System.out.print((i + 1) + ". ");
+						catálogo[i].mostrarListaStock();
+					} else {
+						System.out.println((i + 1) + ". [Vacío]");
+					}
+				}
+				sc.nextLine();
+				respuesta2 = sc.nextLine();
+
+				System.out.println("Cuánta cantidad deseas añadir?");
+				int añadir = sc.nextInt();
+
+				switch (respuesta2) {
+				case "1":
+					catálogo[0].añadirStock(añadir);
+					break;
+				case "2":
+					catálogo[1].añadirStock(añadir);
+					break;
+				case "3":
+					catálogo[2].añadirStock(añadir);
+					break;
+				default:
+					System.err.println("Número inválido");
+					break;
+
+				}
+			}
+		} while (respuesta1 != 7);
 
 	}
 }
