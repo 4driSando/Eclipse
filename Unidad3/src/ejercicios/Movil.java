@@ -16,6 +16,12 @@ public class Movil {
         this.tarifa = t;
         this.consumo = 0;
     }
+    
+    Movil(String n) {
+        this.numero = n;
+        this.tarifa = tipoTarifa.Elefante;
+        this.consumo = 0;
+    }
 
     // Cambiar tarifa
     void setTarifa(tipoTarifa t) {

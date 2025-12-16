@@ -9,11 +9,11 @@ public class MovilMain {
         Scanner sc = new Scanner(System.in);
 
         // Creamos un móvil por defecto
-        Movil m1 = new Movil("666777888", Movil.tipoTarifa.Gato);
+        Movil m1 = new Movil("640570416");
 
         int opcion, t, segs;
 
-        System.out.println("Tarifa por defecto: gato");
+        System.out.println("Tarifa por defecto: elefante");
         do {
             System.out.println("----------------------");
             System.out.println("MENÚ");

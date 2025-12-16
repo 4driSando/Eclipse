@@ -2,34 +2,20 @@ package ejercicios.morrocodutils;
 
 public class Clase40 {
 
-	int num;
-
-	public static void imprimePares(int num1) {
-		if (num1 % 2 == 0) {
-			do {
-				num1 -= 2;
-				System.out.println("- " + num1);
-			} while (num1 >= 2);
-
-		} else if (num1 == 2 || num1 == 3) {
-			System.out.println("- 1");
-
-		} else {
-			num1 -= 1;
-			System.out.println("- " + num1);
-			do {
-				num1 -= 2;
-				System.out.println("- " + num1);
-			} while (num1 >= 2);
-		}
+	// Función que recoge un parámetro he imprime todos los pares hasta él
+	public static int imprimePares(int num) {
+	    if (num % 2 != 0) {
+	        num--;
+	    }
+	    return num - 2;
 	}
 
-	public static void tablaMultiplicar(int num2) {
-		for (int i = 1; i < 11; i++) {
-			System.out.println(i + " x " + num2 + " = " + (num2 * i));
-		}
+	// Función que recoge un parámetro y te muestra la tabla de multiplicar
+	public static int tablaMultiplicar(int num, int num2) {
+		return num * num2;
 	}
 
+	// Función que de muestra fibonacci hasta X veces
 	public static void mostrarFibonacci(int num3) {
 		int pnum = 0, snum = 1, numveces = 0;
 
@@ -42,10 +28,16 @@ public class Clase40 {
 		} while (numveces < num3);
 	}
 
+	// Función que calcula el área de un rectángulo
 	public static double areaRectangulo(double ancho, double alto) {
 		return ancho * alto;
 	}
 
+	public static double areaRectangulo(double ancho) {
+		return ancho * 2;
+	}
+
+	// Función que comprueba si la fecha introducida es correcta
 	public static boolean esFechaCorrecta(int dia, int mes, int anio) {
 		boolean correcto = false;
 		int maxDias;

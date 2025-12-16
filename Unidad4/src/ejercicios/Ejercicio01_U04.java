@@ -6,17 +6,23 @@ public class Ejercicio01_U04 {
 
 	public static void main(String[] args) {
 
-		int num1 = 20, num2 = 8, num3 = 10, ancho = 10, alto = 5, dia = 25, mes = 9, anio = 2025;
+		int num = 21, num2 = 6;
 
-		Clase40.imprimePares(num1);
-		System.out.println("==========");
-		Clase40.tablaMultiplicar(num2);
-		System.out.println("==========");
-		Clase40.mostrarFibonacci(num3);
-		System.out.println("==========");
-		System.out.println("El área del rectángulo es " + Clase40.areaRectangulo(ancho, alto));
-		System.out.println("==========");
-		System.out.println("La fecha es " + Clase40.esFechaCorrecta(dia, mes, anio));
+		System.out.println("==================================================");
+		for (int i = num; i >= 0; i = Clase40.imprimePares(i)) {
+		    System.out.println("- " + i);
+		}
+		System.out.println("==================================================");
+		for (int i = 1; i < 11; i++) {
+			System.out.println(i +" x "+ num2 +" = " + Clase40.tablaMultiplicar(num2, i));
+		}
+		System.out.println("==================================================");
+		Clase40.mostrarFibonacci(10);
+		System.out.println("==================================================");
+		System.out.println("El área del rectángulo es " + Clase40.areaRectangulo(10.25, 5.5));
+		System.out.println("El área del rectángulo sobrecargado es " + Clase40.areaRectangulo(12.75));
+		System.out.println("==================================================");
+		System.out.println("La fecha es " + Clase40.esFechaCorrecta(25, 9, 2025));
 
 	}
 
