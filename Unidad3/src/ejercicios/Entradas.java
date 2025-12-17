@@ -14,7 +14,7 @@ public class Entradas {
 
 	public double venderEntradas(int cantidad) {
 		if (cantidad > numEntradas) {
-			System.out.println("No hay suficientes entradas en " + nombre);
+			System.err.println("No hay suficientes entradas en " + nombre);
 			cantidad = 0;
 		}else if (cantidad < 0){
 			System.err.println("Cantidad no válida compañerete!");
@@ -24,12 +24,13 @@ public class Entradas {
 		return cantidad * precio;
 	}
 
-	public void mostrarEntradas() {
-		System.out.println(nombre + ": " + numEntradas);
+	@Override
+	public String toString() {
+		return nombre + ": " + numEntradas;
 	}
 
-	public void mostrarPrecio() {
-		System.out.println(nombre + ": " + precio + "€");
+	public String mostrarPrecio() {
+		return nombre + ": " + precio + "€";
 	}
 
 	public String getNombre() {

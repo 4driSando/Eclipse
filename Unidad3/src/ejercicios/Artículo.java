@@ -12,6 +12,11 @@ public class Artículo {
 		this.setPrecio(p);
 		this.setNombre(n);
 	}
+	
+	public String toString() {
+		return getNombre() + " - " + "Precio:" + getPrecio() + "€ - IVA: 21% - PVP:"
+				+ getPrecio() * getIva() + "€";
+	}
 
 	public void añadirStock(int añadir) {
 		if (añadir > 0) {
@@ -24,7 +29,7 @@ public class Artículo {
 	
 	public double venderArtículo(int cantidad) {
 		if (cantidad > stock) {
-			System.out.println("No hay suficientes artículos ("+nombre+")");
+			System.err.println("No hay suficientes artículos ("+nombre+")");
 			cantidad = 0;
 		}else if (cantidad < 0){
 			System.err.println("Cantidad no válida compañerete!");
@@ -34,16 +39,16 @@ public class Artículo {
 		return cantidad * precio;
 	}
 	
-	public void mostrarListaStock() {
-		System.out.println(nombre + " / " + stock + " unidades");
+	public String mostrarListaStock() {
+		return nombre + " / " + stock + " unidades";
 	}
 	
-	public void mostrarListaPrecio() {
-		System.out.println(nombre + " / " + precio + "€");
+	public String mostrarListaPrecio() {
+		return nombre + " / " + precio + "€";
 	}
 	
-	public void mostrarProducto() {
-	    System.out.println("Nombre: " + nombre + ", Precio: " + precio + "€, Stock: " + stock);
+	public String mostrarProducto() {
+	    return "Nombre: " + nombre + ", Precio: " + precio + "€, Stock: " + stock;
 	}
 	
 	void setNombre(String n) {

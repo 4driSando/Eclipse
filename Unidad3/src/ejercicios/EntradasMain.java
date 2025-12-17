@@ -34,16 +34,16 @@ public class EntradasMain {
 
 				switch (respuesta2) {
 				case 1:
-					fnorte.mostrarEntradas();
+					System.out.println(fnorte);
 					break;
 				case 2:
-					fsur.mostrarEntradas();
+					System.out.println(fsur);
 					break;
 				case 3:
-					palta.mostrarEntradas();
+					System.out.println(palta);
 					break;
 				case 4:
-					pbaja.mostrarEntradas();
+					System.out.println(pbaja);
 					break;
 				default:
 					System.err.println("Número inválido compañerete");

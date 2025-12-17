@@ -53,12 +53,13 @@ public class TiendaMain {
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
 						System.out.print((i + 1) + ". ");
-						catálogo[i].mostrarProducto();
+						System.out.println(catálogo[i].mostrarProducto());
 					} else {
 						System.out.println((i + 1) + ". [Vacío]");
 					}
 				}
 				break;
+
 
 			// Buscar producto --- No funciona
 			case 3:
@@ -82,7 +83,7 @@ public class TiendaMain {
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
 						System.out.print((i + 1) + ". ");
-						catálogo[i].mostrarListaPrecio();
+						System.out.println(catálogo[i].mostrarProducto());
 					} else {
 						System.out.println((i + 1) + ". [Vacío]");
 					}
@@ -119,7 +120,7 @@ public class TiendaMain {
 				for (int i = 0; i < catálogo.length; i++) {
 					if (catálogo[i] != null) {
 						System.out.print((i + 1) + ". ");
-						catálogo[i].mostrarListaStock();
+						System.out.println(catálogo[i].mostrarListaStock());
 					} else {
 						System.out.println((i + 1) + ". [Vacío]");
 					}

@@ -19,7 +19,7 @@ public class EntradasArraysMain {
 			System.out.println("MENÚ");
 			System.out.println("1. Mostrar número de entradas libres que hay en cada zona");
 			System.out.println("2. Mostrar precio por entrada en cada zona");
-			System.out.println("3. Vender entradas");
+			System.out.println("3. Comprar entradas");
 			System.out.println("4. Salir");
 			respuesta1 = sc.nextInt();
 
@@ -29,7 +29,7 @@ public class EntradasArraysMain {
 				System.out.println("--------------");
 				System.out.println("ENTRADAS RESTANTES");
 				for (int i = 0; i <= 3; i++) {
-					zonas[i].mostrarEntradas();
+					System.out.println(zonas[i]);
 				}
 				break;
 
@@ -37,7 +37,7 @@ public class EntradasArraysMain {
 				System.out.println("--------------");
 				System.out.println("PRECIO");
 				for (int i = 0; i <= 3; i++) {
-					zonas[i].mostrarPrecio();
+					System.out.println(zonas[i].mostrarPrecio());
 				}
 				break;
 

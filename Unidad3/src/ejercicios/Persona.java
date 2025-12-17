@@ -11,6 +11,11 @@ public class Persona {
 		setDni(d);
 		setEdad(e);
 	}
+	
+	@Override
+	public String toString() {
+		return getNombre() +" "+ getApellidos() +" "+ getEdad() +" años "+ getDni();
+	}
 
 	void setNombre(String n) {
 		if (n != null && n.length() > 0) {
@@ -60,9 +65,4 @@ public class Persona {
 		return edad;
 	}
 
-	String obtenerDatos() {
-		return "Nombre: " + nombre + " " + apellidos +
-		       " || DNI: " + dni +
-		       " || Edad: " + edad + " años || ";
-	}
 }
