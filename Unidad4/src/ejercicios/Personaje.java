@@ -44,7 +44,7 @@ public class Personaje {
 	 */
 	@Override
 	public String toString() {
-		return nombre + " / " + rol + " / nivel " + nivel + " / vida " + vida + "ps";
+		return "id " + id + " / " + nombre + " / " + rol + " / nivel " + nivel + " / vida " + vida + "ps";
 	}
 
 	/**
