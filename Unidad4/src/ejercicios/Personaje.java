@@ -44,8 +44,7 @@ public class Personaje {
 	 */
 	@Override
 	public String toString() {
-		return "Personaje [id=" + id + ", nombre=" + nombre + ", rol=" + rol + ", nivel=" + nivel + ", vida=" + vida
-				+ "]";
+		return nombre + " / " + rol + " / nivel " + nivel + " / vida " + vida + "ps";
 	}
 
 	/**
@@ -78,7 +77,7 @@ public class Personaje {
 			System.err.println(nombre + " la ha palmado XP");
 			setVida(0);
 		}		
-		return "El personaje " + nombre + " ha recibido " + daño + " de daño [" + resta + "]";  
+		return "El personaje " + nombre + " ha recibido " + daño + "ps de daño [" + resta + "ps]";  
 	}
 	
 	/**
@@ -94,7 +93,7 @@ public class Personaje {
 			System.err.println(nombre + " ha alcanzado el máximo de salud");
 			setVida(100);
 		}		
-		return nombre + " ha recibido salud! Su vida aumenta hasta " + suma;
+		return nombre + " ha recibido "+ cura +"ps! Su vida aumenta hasta " + suma;
 	}
 	
 	/**
