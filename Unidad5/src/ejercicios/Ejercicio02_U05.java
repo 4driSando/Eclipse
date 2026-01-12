@@ -24,6 +24,8 @@ public class Ejercicio02_U05 {
 		System.out.println("La altura más pequeña es " + arrays.minimoArray(alturas));
 		System.out.println("La altura más grande es " + arrays.maximoArray(alturas));
 		System.out.println("La media de alturas es " + arrays.mediaArray(alturas));
+		
+		sc.close();
 	}
 
 }

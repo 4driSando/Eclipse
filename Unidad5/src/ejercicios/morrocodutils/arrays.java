@@ -4,6 +4,7 @@ public class arrays {
 
 	/**
 	 * Método que genera un array
+	 * 
 	 * @param num = número de enteros random que va a guardar
 	 * @param min = mínimo random
 	 * @param max = máximo random
@@ -13,7 +14,7 @@ public class arrays {
 		int[] array = new int[num];
 
 		for (int i = 0; i < num; i++) {
-			array[i] = (int)(Math.random() * (max - min + 1)) + min;
+			array[i] = (int) (Math.random() * (max - min + 1)) + min;
 		}
 		return array;
 	}
@@ -32,7 +33,7 @@ public class arrays {
 		}
 		return min;
 	}
-	
+
 	public static double minimoArray(double[] array) {
 		double min = array[0];
 
@@ -58,7 +59,7 @@ public class arrays {
 		}
 		return max;
 	}
-	
+
 	public static double maximoArray(double[] array) {
 		double max = array[0];
 
@@ -84,7 +85,7 @@ public class arrays {
 
 		return media;
 	}
-	
+
 	public static double mediaArray(double[] array) {
 		double media, suma = 0;
 
@@ -98,8 +99,9 @@ public class arrays {
 
 	/**
 	 * Comprueba si el número introducido está o no en el array
+	 * 
 	 * @param array
-	 * @param num = número que queremos comprobar
+	 * @param num   = número que queremos comprobar
 	 * @return true o false
 	 */
 	public static boolean estaEnArray(int[] array, int num) {
@@ -115,8 +117,9 @@ public class arrays {
 
 	/**
 	 * Comprueba las posiciones del array
+	 * 
 	 * @param array
-	 * @param num = número que queremos saber en qué posición está
+	 * @param num   = número que queremos saber en qué posición está
 	 * @return la posición donde se encuentra el número introducido
 	 */
 	public static int posicionEnArray(int[] array, int num) {
@@ -125,23 +128,38 @@ public class arrays {
 		for (int i = 0; i < array.length; i++) {
 			if (num == array[i]) {
 				posicion = i + 1;
-			}			
+			}
 		}
 		return posicion;
 	}
-	
+
 	/**
 	 * Voltea el array introducido
+	 * 
 	 * @param array
 	 * @return devuelve otro array pero invertido
 	 */
 	public static int[] volteaArray(int[] array) {
-	    int[] yarra = new int[array.length];
+		int[] yarra = new int[array.length];
 
-	    for (int i = 0; i < array.length; i++) {
-	        yarra[i] = array[array.length - 1 - i];
-	    }
-	    return yarra;
+		for (int i = 0; i < array.length; i++) {
+			yarra[i] = array[array.length - 1 - i];
+		}
+		return yarra;
+	}
+
+	public static void mostrarArray(int[] array1) {
+		System.out.print("| ");
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + " | ");
+		}
+	}
+	
+	public static void mostrarArray(double[] array1) {
+		System.out.print("| ");
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + " | ");
+		}
 	}
 
 }
