@@ -32,6 +32,17 @@ public class arrays {
 		}
 		return min;
 	}
+	
+	public static double minimoArray(double[] array) {
+		double min = array[0];
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] < min) {
+				min = array[i];
+			}
+		}
+		return min;
+	}
 
 	/**
 	 * @param array
@@ -47,12 +58,34 @@ public class arrays {
 		}
 		return max;
 	}
+	
+	public static double maximoArray(double[] array) {
+		double max = array[0];
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] > max) {
+				max = array[i];
+			}
+		}
+		return max;
+	}
 
 	/**
 	 * @param array
 	 * @return media de todos los enteros que conforman el array
 	 */
 	public static double mediaArray(int[] array) {
+		double media, suma = 0;
+
+		for (int i = 0; i < array.length; i++) {
+			suma += array[i];
+		}
+		media = suma / array.length;
+
+		return media;
+	}
+	
+	public static double mediaArray(double[] array) {
 		double media, suma = 0;
 
 		for (int i = 0; i < array.length; i++) {
