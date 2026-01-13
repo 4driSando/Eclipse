@@ -1,8 +1,9 @@
 package ejercicios;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-import ejercicios.morrocodutils.arrays;
+import ejercicios.morrocodutils.SandoArrays;
 
 public class Ejercicio05_U05 {
 
@@ -20,11 +21,9 @@ public class Ejercicio05_U05 {
 		
 		int array1[] = new int[tamanio];
 		
-		for(int i = 0; i < tamanio; i++) {
-			array1[i] = relleno;
-		}
+		Arrays.fill(array1, relleno);
 
-		arrays.mostrarArray(array1);
+		SandoArrays.mostrarArray(array1);
 		
 		sc.close();
 	}

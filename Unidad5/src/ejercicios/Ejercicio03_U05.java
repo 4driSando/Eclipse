@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-import ejercicios.morrocodutils.arrays;
+import ejercicios.morrocodutils.SandoArrays;
 
 public class Ejercicio03_U05 {
 
@@ -25,7 +25,7 @@ public class Ejercicio03_U05 {
 
 			switch (respuesta1) {
 			case 1:
-				arrays.mostrarArray(array1);
+				SandoArrays.mostrarArray(array1);
 				break;
 			case 2:
 				System.out.println("¿Qué posición desea cambiar?");

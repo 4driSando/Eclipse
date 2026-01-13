@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-import ejercicios.morrocodutils.arrays;
+import ejercicios.morrocodutils.SandoArrays;
 
 public class Ejercicio04_U05 {
 
@@ -10,6 +10,7 @@ public class Ejercicio04_U05 {
 		
 		Scanner sc = new Scanner(System.in);
 		int valorInicial, incremento, tamanio;
+
 		
 		System.out.println("SECUENCIAS ARITMÉTICAS MORROCOTUDAS");
 		System.out.println("-----------------------------------");
@@ -21,13 +22,13 @@ public class Ejercicio04_U05 {
 		tamanio = sc.nextInt();
 		
 		int array1[] = new int[tamanio];
-		array1[0] = valorInicial;
+		array1[0] = valorInicial;		
 		
 		for (int i = 1; i < tamanio; i++) {
 			array1[i] = array1[i-1] + incremento;
 		}	
 		
-		arrays.mostrarArray(array1);
+		SandoArrays.mostrarArray(array1);		
 		
 		sc.close();
 	}

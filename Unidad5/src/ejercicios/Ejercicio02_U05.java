@@ -1,7 +1,7 @@
 package ejercicios;
 
 import java.util.Scanner;
-import ejercicios.morrocodutils.arrays;
+import ejercicios.morrocodutils.SandoArrays;
 
 public class Ejercicio02_U05 {
 
@@ -21,9 +21,9 @@ public class Ejercicio02_U05 {
 		}
 
 		System.out.println("Aquí están los datos obtenidos:");
-		System.out.println("La altura más pequeña es " + arrays.minimoArray(alturas));
-		System.out.println("La altura más grande es " + arrays.maximoArray(alturas));
-		System.out.println("La media de alturas es " + arrays.mediaArray(alturas));
+		System.out.println("La altura más pequeña es " + SandoArrays.minimoArray(alturas));
+		System.out.println("La altura más grande es " + SandoArrays.maximoArray(alturas));
+		System.out.println("La media de alturas es " + SandoArrays.mediaArray(alturas));
 		
 		sc.close();
 	}

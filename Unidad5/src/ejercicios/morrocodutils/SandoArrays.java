@@ -1,6 +1,6 @@
 package ejercicios.morrocodutils;
 
-public class arrays {
+public class SandoArrays {
 
 	/**
 	 * Método que genera un array
@@ -8,7 +8,7 @@ public class arrays {
 	 * @param num = número de enteros random que va a guardar
 	 * @param min = mínimo random
 	 * @param max = máximo random
-	 * @return array creado y rellenado con enteros random
+	 * @return devuelve array creado y rellenado con enteros random
 	 */
 	public static int[] generaArray(int num, int min, int max) {
 		int[] array = new int[num];
@@ -21,7 +21,7 @@ public class arrays {
 
 	/**
 	 * @param array
-	 * @return entero más pequeño del array
+	 * @return devuelve el entero más pequeño del array
 	 */
 	public static int minimoArray(int[] array) {
 		int min = array[0];
@@ -47,7 +47,7 @@ public class arrays {
 
 	/**
 	 * @param array
-	 * @return entero más grande del array
+	 * @return devuelve el entero más grande del array
 	 */
 	public static int maximoArray(int[] array) {
 		int max = array[0];
@@ -73,7 +73,7 @@ public class arrays {
 
 	/**
 	 * @param array
-	 * @return media de todos los enteros que conforman el array
+	 * @return devuelve la media de todos los enteros que conforman el array
 	 */
 	public static double mediaArray(int[] array) {
 		double media, suma = 0;
@@ -102,7 +102,7 @@ public class arrays {
 	 * 
 	 * @param array
 	 * @param num   = número que queremos comprobar
-	 * @return true o false
+	 * @return devuelve true o false
 	 */
 	public static boolean estaEnArray(int[] array, int num) {
 		boolean estaEn = false;
@@ -120,7 +120,7 @@ public class arrays {
 	 * 
 	 * @param array
 	 * @param num   = número que queremos saber en qué posición está
-	 * @return la posición donde se encuentra el número introducido
+	 * @return devuelve la posición donde se encuentra el número introducido
 	 */
 	public static int posicionEnArray(int[] array, int num) {
 		int posicion = -1;
@@ -148,18 +148,51 @@ public class arrays {
 		return yarra;
 	}
 
+	/**
+	 * Método para hacer una busqueda binaria/dicotomica en un array
+	 * 
+	 * @param array1   = array ordenado en el que se va a buscar
+	 * @param elemento = elemento del array el cuál se busca
+	 * @return devuelve la posicion del elemento en el array
+	 */
+	public static int busquedaDicotomica(int[] array1, int elemento) {
+		int izq = 0;
+		int der = array1.length - 1;
+		int centro = (izq + der) / 2;
+		int posicion = -1;
+
+		while (izq <= der && array1[centro] != elemento) {
+			if (elemento < centro) {
+				der = centro - 1;
+			} else {
+				izq = centro + 1;
+			}
+			centro = (izq + der) / 2;
+
+			if (izq > der) {
+				posicion = -1;
+			} else {
+				posicion = centro;
+			}
+
+		}
+		return posicion;
+	}
+
 	public static void mostrarArray(int[] array1) {
 		System.out.print("| ");
 		for (int i = 0; i < array1.length; i++) {
 			System.out.print(array1[i] + " | ");
 		}
+		System.out.println("");
 	}
-	
+
 	public static void mostrarArray(double[] array1) {
 		System.out.print("| ");
 		for (int i = 0; i < array1.length; i++) {
 			System.out.print(array1[i] + " | ");
 		}
+		System.out.println("");
 	}
 
 }
