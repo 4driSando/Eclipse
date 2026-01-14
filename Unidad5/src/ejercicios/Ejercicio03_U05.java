@@ -16,7 +16,6 @@ public class Ejercicio03_U05 {
 		System.out.println("-------------------");
 
 		do {
-			System.out.println("");
 			System.out.println("MENÚ");
 			System.out.println("1. Mostrar valores");
 			System.out.println("2. Introducir valores");

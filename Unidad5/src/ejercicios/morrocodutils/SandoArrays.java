@@ -179,6 +179,10 @@ public class SandoArrays {
 		return posicion;
 	}
 
+	/***
+	 * Método para mostrar un array | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+	 * @param array1
+	 */
 	public static void mostrarArray(int[] array1) {
 		System.out.print("| ");
 		for (int i = 0; i < array1.length; i++) {
@@ -191,6 +195,18 @@ public class SandoArrays {
 		System.out.print("| ");
 		for (int i = 0; i < array1.length; i++) {
 			System.out.print(array1[i] + " | ");
+		}
+		System.out.println("");
+	}
+	
+	/***
+	 * Método para mostrar un array a modo de lista
+	 * @param array1
+	 */
+	public static void mostrarArray2(int[] array1) {
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print((i+1) + ". " +array1[i]);
+			System.out.println("");
 		}
 		System.out.println("");
 	}
