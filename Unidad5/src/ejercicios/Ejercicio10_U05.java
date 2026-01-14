@@ -9,15 +9,11 @@ public class Ejercicio10_U05 {
 
 	public static void main(String[] args) {
 
-		int[] array1 = new int[1000];
+		int[] array1 = SandoArrays.generaArray(1000, 0, 99);
 		int respuesta;
 		int contador = 0;
 
 		Scanner sc = new Scanner(System.in);
-
-		for (int i = 0; i < array1.length; i++) {
-			array1[i] = (int) (Math.random() * 100);
-		}
 
 		System.out.println("ARRAY ALEATORIO GENERADO CORRECTAMENTE");
 		System.out.println("Introduzca un número hasta el 99");

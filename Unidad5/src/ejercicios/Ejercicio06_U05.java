@@ -1,5 +1,7 @@
 package ejercicios;
 
+import java.util.Arrays;
+
 public class Ejercicio06_U05 {
 
 	public static void main(String[] args) {
@@ -9,7 +11,6 @@ public class Ejercicio06_U05 {
 		 * introducir 10 diez veces, y luego la muestre por pantalla. En esta ocasión
 		 * has de utilizar Arrays.fill().
 		 */
-		
 
 	}
 
