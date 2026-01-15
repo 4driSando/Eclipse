@@ -210,5 +210,27 @@ public class SandoArrays {
 		}
 		System.out.println("");
 	}
+	
+	/**
+	 * Método para imprimir Arrays Multidimensionales
+	 * @param array1
+	 */
+	public static void mostrarArraysMultidimensionales(int[][] array1) {
+		for (int fila = 0; fila < array1.length; fila++) {
+			for (int columna = 0; columna < array1[fila].length; columna++) {
+				System.out.print("| " + array1[fila][columna] + " |");
+			}
+			System.out.println("");
+		}
+	}
+	
+	public static void mostrarArraysMultidimensionales(double[][] array1) {
+		for (int fila = 0; fila < array1.length; fila++) {
+			for (int columna = 0; columna < array1[fila].length; columna++) {
+				System.out.print("| " + array1[fila][columna] + " |");
+			}
+			System.out.println("");
+		}
+	}
 
 }

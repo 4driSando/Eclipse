@@ -2,7 +2,7 @@ package ejercicios;
 
 import ejercicios.morrocodutils.SandoArrays;
 
-public class Ejercicio15_05 {
+public class Ejercicio15_U05 {
 
 	public static void main(String[] args) {
 		/**
