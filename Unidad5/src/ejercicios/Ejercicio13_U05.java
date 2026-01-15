@@ -14,9 +14,9 @@ public class Ejercicio13_U05 {
 		System.out.println("ARRAY GENERADO");
 		SandoArrays.mostrarArray(array1);
 
-		System.out.println("Primer número a cambiar:");
+		System.out.println("Número a reemplazar:");
 		numero1 = sc.nextInt();
-		System.out.println("Segundo número:");
+		System.out.println("Número de reemplazo:");
 		numero2 = sc.nextInt();
 
 		System.out.print("| ");
