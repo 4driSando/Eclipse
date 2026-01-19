@@ -29,6 +29,7 @@ public class Ejercicio12_U05 {
 
 		SandoArrays.mostrarArray(array1);
 
+		sc.close();
 	}
 
 }

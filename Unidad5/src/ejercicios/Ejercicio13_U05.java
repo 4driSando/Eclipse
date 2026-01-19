@@ -27,5 +27,6 @@ public class Ejercicio13_U05 {
 				System.out.print(array1[i] + " | ");
 			}
 		}
+		sc.close();
 	}
 }
