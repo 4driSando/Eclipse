@@ -1,7 +1,5 @@
 package ejercicios;
 
-import java.util.Arrays;
-
 public class Ejercicio06_U05 {
 
 	public static void main(String[] args) {
