@@ -33,4 +33,12 @@ class CalculadoraTest {
 		int resultado = calculadora.division();
 		assertEquals(resultado, 3);
 		}
+
+	@Test
+	void testRaiz() {
+		Calculadora calculadora = new Calculadora(6,2);
+		int resultado = calculadora.raiz();
+		assertEquals(resultado, 2);
+		}
+	
 }
