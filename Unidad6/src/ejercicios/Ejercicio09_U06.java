@@ -21,8 +21,8 @@ public class Ejercicio09_U06 {
 		clase.add(compi5);
 		clase.add(compi6);
 
-		for(int i = 0; i < clase.size(); i++) {
-			System.out.println(clase.get(i));
+		for(Persona nombre : clase) {
+			System.out.println(nombre);
 		}
 	}
 
