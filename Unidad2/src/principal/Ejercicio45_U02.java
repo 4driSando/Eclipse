@@ -1,5 +1,6 @@
 package principal;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio45_U02 {
@@ -12,12 +13,19 @@ public class Ejercicio45_U02 {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Introduzca un número para factorizar");
-		num = sc.nextInt();
 
+		try {
+			num = sc.nextInt();
 	       do {
 	            num2 *= contador;
 	            System.out.println(contador + "! = " + num2);
 	            contador++;
 	        } while (contador <= num);
+		} catch (InputMismatchException e) {
+			System.err.println("Has introducido otro valor que no es un entero");
+		}
+		System.out.println("Fin del programa");
+		sc.close();
 	}
+		
 }
