@@ -25,17 +25,19 @@ public class Ejercicio04_U07 {
 		}
 
 		try {
-		do {
-			System.out.println("Introduce una posición para ver su valor. Tamaño del array = " + (array1.length - 1));
-			respuesta = sc.nextInt();
-			System.out.println("En la posición " + respuesta + " está el siguiente número: " + array1[respuesta]);
-		} while (respuesta > 0);
+			do {
+				System.out
+						.println("Introduce una posición para ver su valor. Tamaño del array = " + (array1.length - 1));
+				respuesta = sc.nextInt();
+				System.out.println("En la posición " + respuesta + " está el siguiente número: " + array1[respuesta]);
+			} while (respuesta > 0);
 		} catch (InputMismatchException e) {
 			System.err.println("Eso no es un entero, compañerete");
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.err.println("Tu valor está fuera del array");
 		}
 
+		sc.close();
 	}
 
 }
