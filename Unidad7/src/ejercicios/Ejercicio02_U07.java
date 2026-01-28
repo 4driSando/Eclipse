@@ -30,8 +30,9 @@ public class Ejercicio02_U07 {
 		} catch (InputMismatchException e) {
 			System.err.println("Has introducido algo que no es un entero, compañerete");
 		} catch (ArithmeticException e) {
-			System.err.println("Esa división no es válida");
+			System.err.println("Esa división no es válida: " + e.getMessage());
 		}
+		sc.close();
 	}
 
 }

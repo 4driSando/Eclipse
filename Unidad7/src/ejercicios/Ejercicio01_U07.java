@@ -24,6 +24,7 @@ public class Ejercicio01_U07 {
 		} catch (InputMismatchException e) {
 			System.err.println("Ese valor no es un entero, compañerete");
 		}
+		sc.close();
 	}
 
 }

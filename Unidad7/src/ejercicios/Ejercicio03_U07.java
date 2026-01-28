@@ -18,16 +18,22 @@ public class Ejercicio03_U07 {
 
 		
 		System.out.println("Introduce 5 doubles:");
-		try {
 		for (int i = 0; i < array1.length; i++) {
+		try {
 			System.out.println("Número " + (i + 1));
 			num = sc.nextDouble();
 			array1[i] = num;
-		}
+		
 		} catch (InputMismatchException e) {
 			System.err.println("Ese valor no es un double");
+			sc.nextLine();
+			i--;
+		}
 		}
 		
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + " | ");
+		}
 		sc.close();
 	}
 
