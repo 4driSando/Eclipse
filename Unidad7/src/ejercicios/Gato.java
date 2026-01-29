@@ -5,19 +5,9 @@ public class Gato {
 	private String nombre;
 	private int edad;
 
-	public Gato(String nombre, int edad) throws ArithmeticException {
-		super();
-		if (nombre.length() <= 3) {
-			throw new ArithmeticException("El nombre tiene que tener al menos 3 carácteres");
-		} else {
-			this.nombre = nombre;
-		}
-
-		if (edad <= 0) {
-			throw new ArithmeticException("La edad no puede ser negativa");
-		} else {
-			this.edad = edad;
-		}
+	public Gato(String nombre, int edad) throws IllegalArgumentException, ArithmeticException {
+		setNombre(nombre);
+		setEdad(edad);
 	}
 
 	@Override
@@ -26,16 +16,16 @@ public class Gato {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public int getEdad() {
-		return edad;
+		return this.edad;
 	}
 
 	public void setNombre(String nombre) throws ArithmeticException {
 		if (nombre.length() <= 3) {
-			throw new ArithmeticException("El nombre tiene que tener al menos 3 carácteres");
+			throw new IllegalArgumentException("El nombre tiene que tener al menos 3 carácteres");
 		} else {
 			this.nombre = nombre;
 		}

@@ -1,5 +1,6 @@
 package ejercicios;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio05_U07 {
@@ -9,6 +10,8 @@ public class Ejercicio05_U07 {
 		int p;
 		Scanner sc = new Scanner(System.in);
 
+		// Comprueba que sea un entero
+		try {
 		// Comprueba que sea mayor que 0
 		System.out.print("Introduce un número: ");
 		try {
@@ -25,6 +28,9 @@ public class Ejercicio05_U07 {
 			imprimeNegativo(p);
 		} catch (ArithmeticException e) {
 			System.err.println("Error: " + e.getMessage());
+		}
+		} catch (InputMismatchException e) {
+			System.err.println("Ese valor no es un entero compañero");
 		}
 		sc.close();
 	}
