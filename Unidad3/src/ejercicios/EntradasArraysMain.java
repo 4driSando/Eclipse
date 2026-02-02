@@ -1,12 +1,13 @@
 package ejercicios;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EntradasArraysMain {
 
 	public static void main(String[] args) {
 
-		int respuesta1, respuesta2;
+		int respuesta1 = 0, respuesta2 = 0;
 		Scanner sc = new Scanner(System.in);
 		Entradas[] zonas = new Entradas[4];
 		zonas[0] = new Entradas("Fondo Norte", 500, 10);
@@ -21,7 +22,12 @@ public class EntradasArraysMain {
 			System.out.println("2. Mostrar precio por entrada en cada zona");
 			System.out.println("3. Comprar entradas");
 			System.out.println("4. Salir");
-			respuesta1 = sc.nextInt();
+			try {
+				respuesta1 = sc.nextInt();
+			} catch (InputMismatchException e) {
+				sc.next();
+				System.err.println("Error: No es un entero");
+			}
 
 			switch (respuesta1) {
 
@@ -49,10 +55,19 @@ public class EntradasArraysMain {
 				System.out.println("2. Fondo Sur");
 				System.out.println("3. Preferencia Alta");
 				System.out.println("4. Preferencia Baja");
-				respuesta2 = sc.nextInt();
+				try {
+					respuesta2 = sc.nextInt();
+				} catch (InputMismatchException e) {
+					System.err.println("Error: No es un entero");
+				}
 				System.out.println("¿Cuántas entradas quieres?");
+				int cantidad = 0;
 
-				int cantidad = sc.nextInt();
+				try {
+					cantidad = sc.nextInt();
+				} catch (InputMismatchException e) {
+					System.err.println("Error: No es un entero");
+				}
 				double total = 0;
 
 				switch (respuesta2) {
@@ -77,13 +92,16 @@ public class EntradasArraysMain {
 				}
 				break;
 
-			default:
+			case 4:
+				System.out.println("Gracias por usar el gestor de entradas del Gipsy Colliseum");
 				break;
+				
+				default:
+					break;
 			}
 
 		} while (respuesta1 != 4);
 
-		System.out.println("Gracias por usar el gestor de entradas del Gipsy Colliseum");	
 		sc.close();
 
 	}
