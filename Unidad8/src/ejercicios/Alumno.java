@@ -9,7 +9,7 @@ public class Alumno extends Persona {
 	private int curso;
 	private int[] notas = new int[5];
 	
-	public Alumno(int expediente,
+	public Alumno(String nombre, String direccion, int edad, String dni, int telefono, int expediente,
 			String nombreGrado, int curso, int[] notas) {
 		super(nombre, direccion, edad, dni, telefono);
 		this.expediente = expediente;
