@@ -17,6 +17,10 @@ public class Mascota {
 		return nombre + ", nació el " + fechaNac + ". Info: ";
 	}
 
+	public String sonidoCaracteristico() {
+		return getNombre() + " ha dicho ";
+	}
+	
 	public String getNombre() throws ArithmeticException {
 		return nombre;
 	}

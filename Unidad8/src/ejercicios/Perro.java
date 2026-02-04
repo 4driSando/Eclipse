@@ -18,13 +18,13 @@ public class Perro extends Mascota {
 		return super.toString() + "Perro [raza=" + raza + ", pulgas=" + pulgas + "]";
 	}
 
+	@Override
 	public String sonidoCaracteristico() {
 		return super.getNombre() + " ha dicho \"Guau!!\"";
 	}
 
-	public boolean desparasitar(boolean isPulgas) {
-		boolean pulgas = false;
-		return pulgas;
+	public void desparasitar() {
+		this.pulgas = false;
 	}
 
 	public String getRaza() {

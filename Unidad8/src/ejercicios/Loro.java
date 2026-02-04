@@ -21,6 +21,7 @@ public class Loro extends Mascota {
 		return super.toString() + "Loro [origen=" + origen + ", raza=" + raza + ", puedeVolar=" + puedeVolar + "]";
 	}
 
+	@Override
 	public String sonidoCaracteristico() {
 		return super.getNombre() + " ha dicho \"Pio Pio\"";
 	}

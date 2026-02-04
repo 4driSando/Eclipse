@@ -18,6 +18,7 @@ public class Gato extends Mascota {
 		return super.toString() + "Gato [peloLargo=" + peloLargo + ", color=" + color + "]";
 	}
 
+	@Override
 	public String sonidoCaracteristico() {
 		return super.getNombre() + " ha dicho \"Miau\"";
 	}
