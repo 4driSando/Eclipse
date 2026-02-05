@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.time.LocalDate;
 
-public class Mascota {
+public abstract class Mascota {
 
 	private String nombre;
 	private LocalDate fechaNac;
@@ -17,10 +17,8 @@ public class Mascota {
 		return nombre + ", nació el " + fechaNac + ". Info: ";
 	}
 
-	public String sonidoCaracteristico() {
-		return getNombre() + " ha dicho ";
-	}
-	
+	public abstract String sonidoCaracteristico();
+
 	public String getNombre() throws ArithmeticException {
 		return nombre;
 	}

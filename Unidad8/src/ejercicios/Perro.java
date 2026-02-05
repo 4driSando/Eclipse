@@ -36,7 +36,11 @@ public class Perro extends Mascota {
 	}
 
 	public void setRaza(String raza) {
-		this.raza = raza;
+		if (raza == null) {
+			throw new ArithmeticException("Raza no puede ser null");
+		} else {
+			this.raza = raza;
+		}
 	}
 
 	public void setPulgas(boolean pulgas) {

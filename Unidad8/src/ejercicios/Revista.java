@@ -6,7 +6,7 @@ public class Revista extends Publicacion {
 
 	private int numRevista;
 	
-	public Revista(String codigo, String titulo, LocalDate fechaPublic, int paginas, int numRevista) {
+	public Revista(String codigo, String titulo, LocalDate fechaPublic, int paginas, int numRevista) throws Exception {
 		super(codigo, titulo, fechaPublic, paginas);
 		this.setNumRevista(numRevista);
 	}
@@ -20,8 +20,12 @@ public class Revista extends Publicacion {
 		return numRevista;
 	}
 	
-	public void setNumRevista(int numRevista) {
-		this.numRevista = numRevista;
+	public void setNumRevista(int numRevista) throws Exception {
+		if (numRevista >= 0) {
+			this.numRevista = numRevista;			
+		} else {
+			throw new Exception("El número de la revista no puede ser negativo");
+		}
 	}
 
 }
