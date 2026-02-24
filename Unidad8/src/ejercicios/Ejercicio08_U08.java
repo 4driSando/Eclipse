@@ -20,7 +20,7 @@ public class Ejercicio08_U08 {
 			System.out.println("3. Traspasar Dinero");
 			System.out.println("4. Consultar Saldo con Interés Anual");
 			System.out.println("5. Consultar Cuenta");
-			System.out.println("5. Salir");
+			System.out.println("6. Salir");
 			respuesta1 = sc.nextInt();
 
 			switch (respuesta1) {

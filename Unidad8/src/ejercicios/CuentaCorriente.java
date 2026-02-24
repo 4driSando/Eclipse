@@ -7,8 +7,8 @@ public class CuentaCorriente extends CuentaBancaria {
 	}
 
 	@Override
-	public int calcularInteres() {
-		int interesCalculado = getSaldo() + (getSaldo() * getInteresAnuel() / 100);
+	public double calcularInteres() {
+		double interesCalculado = getSaldo() + (getSaldo() * getInteresAnuel() / 100);
 		return interesCalculado;
 	}
 

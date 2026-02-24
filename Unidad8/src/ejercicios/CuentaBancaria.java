@@ -30,7 +30,7 @@ public abstract class CuentaBancaria {
 		return saldo;
 	}
 
-	public abstract int calcularInteres();
+	public abstract double calcularInteres();
 
 	@Override
 	public String toString() {

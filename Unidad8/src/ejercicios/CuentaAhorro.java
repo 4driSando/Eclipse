@@ -9,14 +9,15 @@ public class CuentaAhorro extends CuentaBancaria {
 	}
 
 	@Override
-	public int calcularInteres() {
-		int interesCalculado;
-		if (getSaldo() > saldoMinimo) {
-			interesCalculado = getSaldo() + (getSaldo() * ((getInteresAnuel()*2) / 100));
-		} else {
-			interesCalculado = getSaldo() + (getSaldo() * ((getInteresAnuel()/2) / 100));
-		}
-		return interesCalculado;
+	public double calcularInteres() {
+	    double saldo = getSaldo();
+	    double interes;
+	    if (saldo > saldoMinimo) {
+	        interes = saldo + saldo * (getInteresAnuel() * 2 / 100.0);
+	    } else {
+	        interes = saldo + saldo * (getInteresAnuel() / 2 / 100.0);
+	    }
+	    return interes;
 	}
 
 	public int getSaldoMinimo() {
