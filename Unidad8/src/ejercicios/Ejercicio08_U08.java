@@ -6,8 +6,8 @@ public class Ejercicio08_U08 {
 
 	public static void main(String[] args) {
 
-		CuentaAhorro cA1 = new CuentaAhorro("ES5409-1734-9734", 200, 20);
-		CuentaCorriente cC1 = new CuentaCorriente("ES5489-8319-0435", 400, 20);
+		CuentaAhorro cA1 = new CuentaAhorro("ES5409-1734-9734", 200);
+		CuentaCorriente cC1 = new CuentaCorriente("ES5489-8319-0435", 400);
 
 		Scanner sc = new Scanner(System.in);
 		int respuesta1, dinero;
@@ -42,8 +42,8 @@ public class Ejercicio08_U08 {
 				cC1.traspasarDinero(dinero, cA1);
 				break;
 			case 4:
-				System.out.println(cC1.calcularInteres());
-				System.out.println(cA1.calcularInteres());
+				System.out.println("Interés anual de la cuenta corriente " + cC1.calcularInteres() + "€");
+				System.out.println("Interés anual de la cuenta ahorro " + cA1.calcularInteres() + "€");
 				break;
 				
 			case 5:

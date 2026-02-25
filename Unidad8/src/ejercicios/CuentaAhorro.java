@@ -4,8 +4,8 @@ public class CuentaAhorro extends CuentaBancaria {
 
 	private int saldoMinimo = 400;
 	
-	public CuentaAhorro(String iban, int saldo, int interesAnuel) {
-		super(iban, saldo, interesAnuel);
+	public CuentaAhorro(String iban, int saldo) {
+		super(iban, saldo);
 	}
 
 	@Override
@@ -18,6 +18,11 @@ public class CuentaAhorro extends CuentaBancaria {
 	        interes = saldo + saldo * (getInteresAnuel() / 2 / 100.0);
 	    }
 	    return interes;
+	}
+	
+	@Override
+	public String toString() {
+		return "\nCuenta Ahorro\nIban: " + iban + "\nSaldo: " + saldo + "€\nInterés: " + INTERESANUEL + "%";
 	}
 
 	public int getSaldoMinimo() {

@@ -2,15 +2,14 @@ package ejercicios;
 
 public abstract class CuentaBancaria {
 
-	private String iban;
-	private int saldo;
-	private int interesAnuel = 20;
+	protected String iban;
+	protected int saldo;
+	protected static final int INTERESANUEL = 20;
 
 	// Constructor
-	public CuentaBancaria(String iban, int saldo, int interesAnuel) {
+	public CuentaBancaria(String iban, int saldo) {
 		setIban(iban);
 		setSaldo(saldo);
-		this.interesAnuel = 20;
 	}
 
 	// Métodos
@@ -32,11 +31,6 @@ public abstract class CuentaBancaria {
 
 	public abstract double calcularInteres();
 
-	@Override
-	public String toString() {
-		return "CuentaBancaria [Iban=" + iban + ", Saldo=" + saldo + ", Interés=" + interesAnuel;
-	}
-
 	// Getters & setters
 	public String getIban() {
 		return iban;
@@ -47,7 +41,7 @@ public abstract class CuentaBancaria {
 	}
 
 	public int getInteresAnuel() {
-		return interesAnuel;
+		return INTERESANUEL;
 	}
 
 	public void setIban(String iban) {
