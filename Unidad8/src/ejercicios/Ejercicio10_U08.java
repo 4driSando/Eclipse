@@ -9,26 +9,62 @@ public class Ejercicio10_U08 {
 
 		ArrayList<Vehiculo> lista = new ArrayList<>();
 
-		lista.add(new Coche("9023LMF", "Seat Ibiza", 4, true));
-		lista.add(new Coche("1147CTR", "Ford Focus", 4, false));
+		// COCHES
+		try {
+		    lista.add(new Coche("9576NRT", "Seat Ibiza", 4, true));
+		} catch (Exception e) { System.err.println("Error Coche 1: " + e.getMessage()); }
 
-		lista.add(new Moto("3456JKL", "Yamaha R6", 2, "Azul"));
-		lista.add(new Moto("2942MLR", "Kawasaki Ninja", 2, "Verde"));
+		try {
+		    lista.add(new Coche("1147CTR", "Ford Focus", 4, false));
+		} catch (Exception e) { System.err.println("Error Coche 2: " + e.getMessage()); }
 
-		lista.add(new Barco("NAOMI", "Yate Deluxe", 30, true));
-		lista.add(new Barco("PASAFARDOS", "Lancha Rápida", 12, false));
+		// MOTOS
+		try {
+		    lista.add(new Moto("3456JKL", "Yamaha R6", 2, "Azul"));
+		} catch (Exception e) { System.err.println("Error Moto 1: " + e.getMessage()); }
 
-		lista.add(new Submarino("TITAN", "Deep Explorer", 70, 500));
-		lista.add(new Submarino("OCEANO", "Blue Abyss", 55, 800));
+		try {
+		    lista.add(new Moto("2942MLR", "Kawasaki Ninja", 2, "Verde"));
+		} catch (Exception e) { System.err.println("Error Moto 2: " + e.getMessage()); }
 
-		lista.add(new Avion("ILMS123456", "Boeing 737", 180, 12));
-		lista.add(new Avion("PSHP654321", "Falcon", 150, 10));
+		// BARCOS
+		try {
+		    lista.add(new Barco("NAOMI", "Yate Deluxe", 30, true));
+		} catch (Exception e) { System.err.println("Error Barco 1: " + e.getMessage()); }
 
-		lista.add(new Helicotero("TOPO141122", "Rescue One", 6, 4));
-		lista.add(new Helicotero("RATA230424", "Sky Patrol", 8, 2));
+		try {
+		    lista.add(new Barco("PASAFARDOS", "Lancha Rápida", 12, false));
+		} catch (Exception e) { System.err.println("Error Barco 2: " + e.getMessage()); }
+
+		// SUBMARINOS
+		try {
+		    lista.add(new Submarino("TITAN", "Deep Explorer", 70, 500));
+		} catch (Exception e) { System.err.println("Error Submarino 1: " + e.getMessage()); }
+
+		try {
+		    lista.add(new Submarino("OCEANO", "Blue Abyss", 55, 800));
+		} catch (Exception e) { System.err.println("Error Submarino 2: " + e.getMessage()); }
+
+		// AVIONES
+		try {
+		    lista.add(new Avion("ILMS123456", "Boeing 737", 180, 12));
+		} catch (Exception e) { System.err.println("Error Avion 1: " + e.getMessage()); }
+
+		try {
+		    lista.add(new Avion("PSHP654321", "Falcon", 150, 10));
+		} catch (Exception e) { System.err.println("Error Avion 2: " + e.getMessage()); }
+
+		// HELICÓPTEROS
+		try {
+		    lista.add(new Helicotero("TOPO141122", "Rescue One", 6, 4));
+		} catch (Exception e) { System.err.println("Error Helicóptero 1: " + e.getMessage()); }
+
+		try {
+		    lista.add(new Helicotero("RATA230424", "Sky Patrol", 8, 2));
+		} catch (Exception e) { System.err.println("Error Helicóptero 2: " + e.getMessage()); }
 
 		Scanner sc = new Scanner(System.in);
-		int respuesta;
+		int respuesta = 0, valor = 0;
 
 		do {
 			System.out.println("\nMENÚ VEHÍCULOS MORROCOTUDOS");
@@ -40,7 +76,11 @@ public class Ejercicio10_U08 {
 			System.out.println("6. Demostrar polimorfismo");
 			System.out.println("7. Salir");
 
-			respuesta = sc.nextInt();
+			try {
+				respuesta = sc.nextInt();
+			} catch (Exception e) {
+				System.out.println("Eso no es un entero");
+			}
 
 			switch (respuesta) {
 
@@ -102,7 +142,11 @@ public class Ejercicio10_U08 {
 
 			case 5:
 				System.out.print("Introduce profundidad mínima: ");
-				int valor = sc.nextInt();
+				try {
+					valor = sc.nextInt();
+				} catch (Exception e) {
+					System.err.println("Eso no es un entero");
+				}
 
 				System.out.println("\nSUBMARINOS CON PROFUNDIDAD SUPERIOR A " + valor);
 				for (Vehiculo v : lista) {

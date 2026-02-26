@@ -8,7 +8,7 @@ public class Empresa {
 	private String cif;
 	private int telefono;
 	private String direccion;
-	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	private ArrayList<Empleado> empleados;
 
 	// Constructor
 	public Empresa(String nombre, String cif) {
@@ -16,7 +16,7 @@ public class Empresa {
 		this.cif = cif;
 		setTelefono(telefono);
 		setDireccion(direccion);
-		setEmpleados(empleados);
+		this.empleados = new ArrayList<Empleado>();
 	}
 
 	// Métodos
@@ -127,10 +127,6 @@ public class Empresa {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}
-
-	public void setEmpleados(ArrayList<Empleado> empleados) {
-		this.empleados = empleados;
 	}
 
 }

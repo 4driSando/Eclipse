@@ -6,7 +6,7 @@ public class Moto extends Terrestre {
 
 	public Moto(String matricula, String modelo, int ruedas, String color) {
 		super(matricula, modelo, ruedas);
-		this.color = color;
+		setColor(color);
 		if (!validarMatricula()) {
 			throw new IllegalArgumentException("Matrícula no válida");
 		}
@@ -28,6 +28,9 @@ public class Moto extends Terrestre {
 	}
 
 	public void setColor(String color) {
+        if (color == null || color.trim().isEmpty()) {
+            throw new IllegalArgumentException("El color no puede ser nulo ni vacío");
+        }
 		this.color = color;
 	}
 

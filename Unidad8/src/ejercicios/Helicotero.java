@@ -29,6 +29,9 @@ public class Helicotero extends Aereo {
 	}
 
 	public void setHelices(int helices) {
+        if (helices <= 0) {
+            throw new IllegalArgumentException("El nº de hélices no puede ser negativo ni cero");
+        }
 		this.helices = helices;
 	}
 

@@ -15,6 +15,10 @@ public class ProductoCongelado extends Producto {
 		setPaisOrigen(paisOrigen);
 		setTiempoReco(tiempoReco);
 	}
+	
+	public ProductoCongelado(String nombre, LocalDate fechaCad, int numLote, LocalDate fechaEnvasado) throws Exception {
+		super(nombre, fechaCad, numLote, fechaEnvasado);
+	}
 
 	// toString
 	@Override

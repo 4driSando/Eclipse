@@ -65,88 +65,66 @@ public class Ejercicio12_U08 {
 				int respuesta1 = sc.nextInt();
 				sc.nextLine();
 				switch (respuesta1) {
-				case 1:
-					System.out.println("Nombre: ");
-					String nombre = sc.nextLine();
-					System.out.println("Fecha de caducidad (yyyy-MM-dd): ");
-					String fechaCad = sc.nextLine();
-					LocalDate fechaC = LocalDate.parse(fechaCad);
-					System.out.println("Número de lote:");
-					int numLote = sc.nextInt();
-					sc.nextLine();
-					System.out.println("Fecha de envasado (yyyy-MM-dd): ");
-					String fechaEnvasado = sc.nextLine();
-					LocalDate fechaE = LocalDate.parse(fechaEnvasado);
-					System.out.println("Pais Origen:");
-					String pais = sc.nextLine();
+				case 1: {
+					ProductoFresco p1;
 					try {
-						ProductoFresco p1 = new ProductoFresco(nombre, fechaC, numLote, fechaE, pais);
+						p1 = (ProductoFresco) preguntarProducto(productos, sc);
+						System.out.println("Pais Origen:");
+						String pais = sc.nextLine();
+						p1.setPaisOrigen(pais);
+						System.out.println("Su producto ha sido añadido con éxito");
+						System.out.println(p1);
+					} catch (Exception e) {
+						System.out.println(e.getMessage());
+					}
+
+				}
+					break;
+
+				case 2: {
+					ProductoRefrigerado p1;
+					try {
+						p1 = (ProductoRefrigerado) preguntarProducto(productos, sc);
+						System.out.println("Código organismo:");
+						String codOrg = sc.nextLine();
+						p1.setCodOrg(codOrg);
+						System.out.println("Tiempo recomendado:");
+						int tiempo = sc.nextInt();
+						sc.nextLine();
+						p1.setTiempoReco(tiempo);
 						productos.add(p1);
 						System.out.println("Su producto ha sido añadido con éxito");
 						System.out.println(p1);
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 					}
+				}
 					break;
 
-				case 2:
-					System.out.println("Nombre: ");
-					String nombre1 = sc.nextLine();
-					System.out.println("Fecha de caducidad (yyyy-MM-dd): ");
-					String fechaCad1 = sc.nextLine();
-					LocalDate fechaC1 = LocalDate.parse(fechaCad1);
-					System.out.println("Número de lote:");
-					int numLote1 = sc.nextInt();
-					sc.nextLine();
-					System.out.println("Fecha de envasado (yyyy-MM-dd): ");
-					String fechaEnv = sc.nextLine();
-					LocalDate fechaE1 = LocalDate.parse(fechaEnv);
-					System.out.println("Código organismo:");
-					String codOrg = sc.nextLine();
-					System.out.println("Tiempo recomendado:");
-					int tiempo = sc.nextInt();
-					sc.nextLine();
+				case 3: {
+					ProductoCongelado p1;
 					try {
-						ProductoRefrigerado p2 = new ProductoRefrigerado(nombre1, fechaC1, numLote1, fechaE1, codOrg,
-								tiempo);
-						productos.add(p2);
+						p1 = (ProductoCongelado) preguntarProducto(productos, sc);
+						System.out.println("País origen:");
+						String pais = sc.nextLine();
+						p1.setPaisOrigen(pais);
+						System.out.println("Tiempo recomendado:");
+						int tiempo = sc.nextInt();
+						sc.nextLine();
+						p1.setTiempoReco(tiempo);
+						productos.add(p1);
 						System.out.println("Su producto ha sido añadido con éxito");
-						System.out.println(p2);
+						System.out.println(p1);
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 					}
+				}
 					break;
 
-				case 3:
-					System.out.println("Nombre: ");
-					String nombre2 = sc.nextLine();
-					System.out.println("Fecha de caducidad (yyyy-MM-dd): ");
-					String fechaCad2 = sc.nextLine();
-					LocalDate fechaC2 = LocalDate.parse(fechaCad2);
-					System.out.println("Número de lote:");
-					int numLote2 = sc.nextInt();
-					sc.nextLine();
-					System.out.println("Fecha de envasado (yyyy-MM-dd): ");
-					String fechaEnv2 = sc.nextLine();
-					LocalDate fechaE2 = LocalDate.parse(fechaEnv2);
-					System.out.println("País origen:");
-					String pais2 = sc.nextLine();
-					System.out.println("Tiempo recomendado:");
-					int tiempo2 = sc.nextInt();
-					sc.nextLine();
-					try {
-						ProductoCongelado p3 = new ProductoCongelado(nombre2, fechaC2, numLote2, fechaE2, pais2,
-								tiempo2);
-						productos.add(p3);
-						System.out.println("Su producto ha sido añadido con éxito");
-						System.out.println(p3);
-					} catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					break;
-
-				default:
+				default: {
 					System.out.println("Esa no es una opción válida");
+
+				}
 					break;
 				}
 				break;
@@ -197,6 +175,24 @@ public class Ejercicio12_U08 {
 			}
 		} while (respuesta != 6);
 		sc.close();
+	}
+
+	private static Producto preguntarProducto(ArrayList<Producto> productos, Scanner sc) throws Exception {
+		System.out.println("Nombre: ");
+		String nombre = sc.nextLine();
+		System.out.println("Fecha de caducidad (yyyy-MM-dd): ");
+		String fechaCad = sc.nextLine();
+		LocalDate fechaC = LocalDate.parse(fechaCad);
+		System.out.println("Número de lote:");
+		int numLote = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Fecha de envasado (yyyy-MM-dd): ");
+		String fechaEnvasado = sc.nextLine();
+		LocalDate fechaE = LocalDate.parse(fechaEnvasado);
+		ProductoFresco p1;
+		p1 = new ProductoFresco(nombre, fechaC, numLote, fechaE);
+		productos.add(p1);
+		return p1;
 	}
 
 }

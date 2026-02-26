@@ -6,7 +6,7 @@ public abstract class Terrestre extends Vehiculo {
 
 	public Terrestre(String matricula, String modelo, int ruedas) {
 		super(matricula, modelo);
-		this.ruedas = ruedas;
+		setRuedas(ruedas);
 	}
 
 	/**
@@ -27,6 +27,9 @@ public abstract class Terrestre extends Vehiculo {
 	}
 
 	public void setRuedas(int ruedas) {
+        if (ruedas <= 0) {
+            throw new IllegalArgumentException("El nº de ruedas no puede ser negativo ni cero");
+        }
 		this.ruedas = ruedas;
 	}
 

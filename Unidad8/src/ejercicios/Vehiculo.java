@@ -6,8 +6,8 @@ public abstract class Vehiculo {
 	protected String modelo;
 
 	public Vehiculo(String matricula, String modelo) {
-		this.matricula = matricula;
-		this.modelo = modelo;
+		setMatricula(matricula);
+		setModelo(modelo);
 	}
 
 	/**
@@ -24,6 +24,9 @@ public abstract class Vehiculo {
 	}
 
 	public void setMatricula(String matricula) {
+        if (matricula == null || matricula.trim().isEmpty()) {
+            throw new IllegalArgumentException("La matricula no puede ser nula ni vacío");
+        }
 		this.matricula = matricula;
 	}
 
@@ -32,6 +35,9 @@ public abstract class Vehiculo {
 	}
 
 	public void setModelo(String modelo) {
+        if (modelo == null || modelo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El modelo no puede ser nulo ni vacío");
+        }
 		this.modelo = modelo;
 	}
 

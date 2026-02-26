@@ -6,7 +6,7 @@ public class Avion extends Aereo {
 
 	public Avion(String matricula, String modelo, int asientos, int tiempoVuelo) {
 		super(matricula, modelo, asientos);
-		this.tiempoVuelo = tiempoVuelo;
+		setTiempoVuelo(tiempoVuelo);
 		if (!validarMatricula()) {
 			throw new IllegalArgumentException("Matrícula no válida");
 		}
@@ -29,6 +29,9 @@ public class Avion extends Aereo {
 	}
 
 	public void setTiempoVuelo(int tiempoVuelo) {
+        if (tiempoVuelo <= 0) {
+            throw new IllegalArgumentException("El tiempo de vuelo no puede ser negativo ni cero");
+        }
 		this.tiempoVuelo = tiempoVuelo;
 	}
 

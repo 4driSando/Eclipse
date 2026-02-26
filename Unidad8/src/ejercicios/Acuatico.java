@@ -6,7 +6,7 @@ public abstract class Acuatico extends Vehiculo {
 
 	public Acuatico(String matricula, String modelo, int eslora) {
 		super(matricula, modelo);
-		this.eslora = eslora;
+		setEslora(eslora);
 	}
 
 	/**
@@ -27,6 +27,9 @@ public abstract class Acuatico extends Vehiculo {
 	}
 
 	public void setEslora(int eslora) {
+        if (eslora <= 0) {
+            throw new IllegalArgumentException("La eslora no puede ser negativa ni cero");
+        }
 		this.eslora = eslora;
 	}
 

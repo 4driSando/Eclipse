@@ -13,6 +13,11 @@ public class ProductoFresco extends Producto {
 		super(nombre, fechaCad, numLote, fechaEnvasado);
 		setPaisOrigen(paisOrigen);
 	}
+	
+	public ProductoFresco(String nombre, LocalDate fechaCad, int numLote, LocalDate fechaEnvasado)
+			throws Exception {
+		super(nombre, fechaCad, numLote, fechaEnvasado);
+	}
 
 	// toString
 	@Override

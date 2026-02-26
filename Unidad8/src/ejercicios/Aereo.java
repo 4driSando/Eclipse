@@ -6,7 +6,7 @@ public abstract class Aereo extends Vehiculo {
 
 	public Aereo(String matricula, String modelo, int asientos) {
 		super(matricula, modelo);
-		this.asientos = asientos;
+		setAsientos(asientos);
 	}
 
 	/**
@@ -27,6 +27,9 @@ public abstract class Aereo extends Vehiculo {
 	}
 
 	public void setAsientos(int asientos) {
+        if (asientos <= 0) {
+            throw new IllegalArgumentException("El nº de asientos no puede ser negativo ni cero");
+        }
 		this.asientos = asientos;
 	}
 
