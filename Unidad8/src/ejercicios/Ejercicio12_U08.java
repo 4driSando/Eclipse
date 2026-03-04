@@ -189,8 +189,8 @@ public class Ejercicio12_U08 {
 		System.out.println("Fecha de envasado (yyyy-MM-dd): ");
 		String fechaEnvasado = sc.nextLine();
 		LocalDate fechaE = LocalDate.parse(fechaEnvasado);
-		ProductoFresco p1;
-		p1 = new ProductoFresco(nombre, fechaC, numLote, fechaE);
+		Producto p1;
+		p1 = new Producto(nombre, fechaC, numLote, fechaE);
 		productos.add(p1);
 		return p1;
 	}
