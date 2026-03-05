@@ -1,0 +1,9 @@
+Found a 4 line (33 tokens) duplication in the following files: 
+Starting at line 22 of C:\Users\M.A19-PC05\repositorios\Eclipse\PrestamosPersonas\src\personas\Persona.java
+Starting at line 28 of C:\Users\M.A19-PC05\repositorios\Eclipse\PrestamosPersonas\src\personas\Persona.java
+
+    public void pSP (){
+        System.out.println("Nombre: "+ n);
+        System.out.println("Edad: "+ edad);
+        System.out.println("Teléfono: "+ numeroDeTelefono);
+

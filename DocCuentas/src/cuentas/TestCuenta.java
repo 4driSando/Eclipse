@@ -11,6 +11,13 @@ import java.io.InputStreamReader;
  * @version 1.0
  */
 public class TestCuenta {
+	
+	/**
+	 * Contructor por defecto obligatorio
+	 */
+	public TestCuenta() {
+		
+	}
 
 	static BufferedReader dato = new BufferedReader(new InputStreamReader(System.in));
 

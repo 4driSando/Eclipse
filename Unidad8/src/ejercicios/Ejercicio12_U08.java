@@ -66,9 +66,8 @@ public class Ejercicio12_U08 {
 				sc.nextLine();
 				switch (respuesta1) {
 				case 1: {
-					ProductoFresco p1;
 					try {
-						p1 = (ProductoFresco) preguntarProducto(productos, sc);
+						ProductoFresco p1 = (ProductoFresco) preguntarProducto(productos, sc, 1);
 						System.out.println("Pais Origen:");
 						String pais = sc.nextLine();
 						p1.setPaisOrigen(pais);
@@ -82,9 +81,8 @@ public class Ejercicio12_U08 {
 					break;
 
 				case 2: {
-					ProductoRefrigerado p1;
 					try {
-						p1 = (ProductoRefrigerado) preguntarProducto(productos, sc);
+						ProductoRefrigerado p1 = (ProductoRefrigerado) preguntarProducto(productos, sc, 2);
 						System.out.println("Código organismo:");
 						String codOrg = sc.nextLine();
 						p1.setCodOrg(codOrg);
@@ -102,9 +100,8 @@ public class Ejercicio12_U08 {
 					break;
 
 				case 3: {
-					ProductoCongelado p1;
 					try {
-						p1 = (ProductoCongelado) preguntarProducto(productos, sc);
+						ProductoCongelado p1 = (ProductoCongelado) preguntarProducto(productos, sc, 3);
 						System.out.println("País origen:");
 						String pais = sc.nextLine();
 						p1.setPaisOrigen(pais);
@@ -177,7 +174,7 @@ public class Ejercicio12_U08 {
 		sc.close();
 	}
 
-	private static Producto preguntarProducto(ArrayList<Producto> productos, Scanner sc) throws Exception {
+	private static Producto preguntarProducto(ArrayList<Producto> productos, Scanner sc, int opcion) throws Exception {
 		System.out.println("Nombre: ");
 		String nombre = sc.nextLine();
 		System.out.println("Fecha de caducidad (yyyy-MM-dd): ");
@@ -189,10 +186,21 @@ public class Ejercicio12_U08 {
 		System.out.println("Fecha de envasado (yyyy-MM-dd): ");
 		String fechaEnvasado = sc.nextLine();
 		LocalDate fechaE = LocalDate.parse(fechaEnvasado);
-		Producto p1;
-		p1 = new Producto(nombre, fechaC, numLote, fechaE);
-		productos.add(p1);
-		return p1;
+		
+		if (opcion == 1) {
+			ProductoFresco p1 = new ProductoFresco(nombre, fechaC, numLote, fechaE);
+			productos.add(p1);
+			return p1;
+		} else if (opcion == 2) {
+			ProductoRefrigerado p1 = new ProductoRefrigerado(nombre, fechaC, numLote, fechaE);
+			productos.add(p1);
+			return p1;
+		} else if (opcion == 3) {
+			ProductoCongelado p1 = new ProductoCongelado(nombre, fechaC, numLote, fechaE);
+			productos.add(p1);
+			return p1;
+		}
+		return null;
 	}
 
 }

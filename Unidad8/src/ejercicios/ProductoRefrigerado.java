@@ -15,6 +15,10 @@ public class ProductoRefrigerado extends Producto {
 		setCodOrg(codOrg);
 		setTiempoReco(tiempoReco);
 	}
+	
+	public ProductoRefrigerado(String nombre, LocalDate fechaCad, int numLote, LocalDate fechaEnvasado) throws Exception {
+		super(nombre, fechaCad, numLote, fechaEnvasado);
+	}
 
 	// toString
 	@Override
