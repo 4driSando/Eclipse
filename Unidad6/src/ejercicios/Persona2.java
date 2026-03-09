@@ -1,6 +1,5 @@
 package ejercicios;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Persona2 implements Comparable<Persona2> {
@@ -56,7 +55,6 @@ public class Persona2 implements Comparable<Persona2> {
 		Persona2 p2 = null;
 		if (o instanceof Persona2) {
 			p2 = (Persona2) o;
-
 		} else {
 			return variable;
 		}
@@ -72,7 +70,6 @@ public class Persona2 implements Comparable<Persona2> {
 	}
 	@Override
 	public String toString() {
-		
 		return this.getNombre() + " - " + this.getEdad();
 	}
 
