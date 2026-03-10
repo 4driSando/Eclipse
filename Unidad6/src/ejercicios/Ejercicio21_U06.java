@@ -11,12 +11,12 @@ public class Ejercicio21_U06 {
 
 		Scanner sc = new Scanner(System.in);
 		int respuesta;
-
+		
 		// Colecciones instanciadas
-		TreeSet<Alumno> autistas = new TreeSet<Alumno>();
-		TreeSet<Alumno> autistas2 = new TreeSet<Alumno>(new CompararPorNombre());
-		TreeSet<Alumno> autistas3 = new TreeSet<Alumno>(new ComparadorCurso());
-		ArrayList<Alumno> autism = new ArrayList<Alumno>();
+		TreeSet<Alumno> alumnosTS = new TreeSet<Alumno>();
+		TreeSet<Alumno> alumnosTS2 = new TreeSet<Alumno>(new CompararPorNombre());
+		TreeSet<Alumno> alumnosTS3 = new TreeSet<Alumno>(new ComparadorCurso());
+		ArrayList<Alumno> alumnosAL = new ArrayList<Alumno>();
 
 		// Alumnos instanciados
 		Alumno iñaki = new Alumno("Iñaki Lovato Martín", 19, 1);
@@ -29,19 +29,19 @@ public class Ejercicio21_U06 {
 		Alumno hanser = new Alumno("Hanser Onelix Pérez Osorno", 19, 2);
 
 		// Alumnos agregados a las colecciones
-		autism.add(cespedes);
-		autism.add(ventresca);
-		autism.add(samuel);
-		autism.add(hanser);
-		autism.add(iñaki);
-		autism.add(lhanz);
-		autism.add(sandoval);
-		autism.add(hector);
+		alumnosAL.add(cespedes);
+		alumnosAL.add(ventresca);
+		alumnosAL.add(samuel);
+		alumnosAL.add(hanser);
+		alumnosAL.add(iñaki);
+		alumnosAL.add(lhanz);
+		alumnosAL.add(sandoval);
+		alumnosAL.add(hector);
 
-		for (Alumno a : autism) {
-			autistas.add(a);
-			autistas2.add(a);
-			autistas3.add(a);
+		for (Alumno a : alumnosAL) {
+			alumnosTS.add(a);
+			alumnosTS2.add(a);
+			alumnosTS3.add(a);
 		}
 
 		// do while con el menú
@@ -59,44 +59,44 @@ public class Ejercicio21_U06 {
 			switch (respuesta) {
 			case 1:
 				System.out.println("\nTodos los alumnos del ArrayList");
-				for (Alumno a : autism) {
+				for (Alumno a : alumnosAL) {
 					System.out.println(a);
 				}
 				break;
 
 			case 2:
 				System.out.println("\nTodos los alumnos del TreeSet");
-				for (Alumno a : autistas) {
+				for (Alumno a : alumnosTS) {
 					System.out.println(a);
 				}
 				break;
 
 			case 3:
 				System.out.println("\nTodos los alumnos del ArrayList ordenados por nombre");
-				autism.sort(new CompararPorNombre());
-				for (Alumno a : autism) {
+				alumnosAL.sort(new CompararPorNombre());
+				for (Alumno a : alumnosAL) {
 					System.out.println(a);
 				}
 				break;
 
 			case 4:
 				System.out.println("\nTodos los alumnos del TreeSet ordenados por nombre");
-				for (Alumno a : autistas2) {
+				for (Alumno a : alumnosTS2) {
 					System.out.println(a);
 				}
 				break;
 
 			case 5:
 				System.out.println("\nTodos los alumnos del ArrayList ordenados por curso, nombre");
-				autism.sort(new ComparadorCurso());
-				for (Alumno a : autism) {
+				alumnosAL.sort(new ComparadorCurso());
+				for (Alumno a : alumnosAL) {
 					System.out.println(a);
 				}
 				break;
 
 			case 6:
 				System.out.println("\nTodos los alumnos del TreeSet ordenados por curso, nombre");
-				for (Alumno a : autistas3) {
+				for (Alumno a : alumnosTS3) {
 					System.out.println(a);
 				}
 				break;
@@ -117,7 +117,9 @@ public class Ejercicio21_U06 {
 
 }
 
+// Clase que sobreescribe el método compare para comparar por nombre
 class CompararPorNombre implements Comparator<Alumno> {
+	@Override
 	public int compare(Alumno a1, Alumno a2) {
 		int variable;
 
@@ -130,6 +132,7 @@ class CompararPorNombre implements Comparator<Alumno> {
 	}
 }
 
+//Clase que sobreescribe el método compare para comparar por curso y luego nombre
 class ComparadorCurso implements Comparator<Alumno> {
 	@Override
 	public int compare(Alumno a1, Alumno a2) {
