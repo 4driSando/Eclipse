@@ -46,24 +46,19 @@ public class Ejercicio20_U06 {
 			case 3:
 				System.out.println("Empleado a despedir");
 				String nombre2 = sc.nextLine();
-				Empleado encontrado = null;
-				try {
-					for (Empleado e : empleados) {
-						if (e.getNombre().equals(nombre2)) {
-							encontrado = e;
-							break;
-						}
-					}
-					System.out.println("Empleado " + encontrado.getNombre() + " despedido");
-					empleados.remove(encontrado);
-				} catch (NullPointerException e2) {
-					System.out.println("Empleado no encontrado");
+
+				if (empleados.remove(new Empleado(nombre2, 0))) {
+					System.out.println("Empleado eliminado");
+				} else {
+					System.out.println("No se ha podido eliminar");
 				}
 				break;
 
 			case 4:
 				System.out.println("Despidiendo a todos los empleados...");
-				empleados.removeAll(empleados);
+				empleados.clear();
+
+				// empleados.removeAll(empleados); mejor para borrar subconjuntos
 				break;
 
 			case 5:
@@ -90,17 +85,25 @@ public class Ejercicio20_U06 {
 
 	}
 
+	/**
+	 * Método para buscar empleados en un HashSet
+	 * 
+	 * @param empleados    HashSet donde buscar
+	 * @param nombreBuscar nombre del empleado a buscar
+	 * @return toString del empleado encontrado
+	 */
 	public static String buscarEnHashSet(HashSet<Empleado> empleados, String nombreBuscar) {
 		String esta = "";
-		for (Empleado e : empleados) {
-			if (e.getNombre().equalsIgnoreCase(nombreBuscar)) {
-				System.out.println("Empleado encontrado");
-				esta = e.toString();
-				break;
-			} else {
-				System.out.println("Empleado no encontrado");
-				break;
+		if (empleados.contains(new Empleado(nombreBuscar, 0))) {
+			for (Empleado e : empleados) {
+				if (e.getNombre().equalsIgnoreCase(nombreBuscar)) {
+					System.out.println("Empleado encontrado");
+					esta = e.toString();
+					break;
+				}
 			}
+		} else {
+			System.out.println("Empleado no encontrado");
 		}
 		return esta;
 	}
