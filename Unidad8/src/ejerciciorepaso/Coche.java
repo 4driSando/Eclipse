@@ -27,6 +27,15 @@ public class Coche extends Vehiculo implements Electrico {
 		this.esElectrico = esElectrico;
 	}
 
+	// toString
+	@Override
+	public String toString() {
+	    return "Coche - " + getModelo() +
+	           "\nMatrícula: " + getMatricula() +
+	           "\nCoste: " + getCosteReparacion() +
+	           "\nEléctrico: " + isEsElectrico();
+	}
+	
 	// Método abstracto
 	@Override
 	public String obtenerInformeMantenimiento() {

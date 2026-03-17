@@ -1,8 +1,9 @@
 package ejerciciorepaso;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Comparable<Vehiculo>{
 
 	// Atributos
 	private String matricula;
@@ -35,12 +36,6 @@ public abstract class Vehiculo {
 		return Objects.equals(matricula, other.matricula);
 	}
 
-	// toString
-	@Override
-	public String toString() {
-		return Vehiculo.class + modelo + "\nMatrícula: " + matricula + "\nCoste de reparacion: " + costeReparacion;
-	}
-
 	// Getters
 	public String getMatricula() {
 		return matricula;
@@ -56,7 +51,7 @@ public abstract class Vehiculo {
 
 	// Setters
 	public void setMatricula(String matricula) throws Exception {
-		if (matricula.equals("[0-9]{4}[A-Z]{3}")) {
+		if (matricula.matches("[A-Z]{3}[0-9]{4}")) {
 			this.matricula = matricula;
 		} else {
 			throw new Exception("El formato de la matrícula no es válido");
@@ -64,7 +59,7 @@ public abstract class Vehiculo {
 	}
 
 	public void setModelo(String modelo) throws Exception {
-		if (modelo.equals(null) || modelo.equals("")) {
+		if (modelo == null || modelo.isEmpty()) {
 			throw new Exception("Modelo no puede ser null ni estar vacío");
 		} else {
 			this.modelo = modelo;
@@ -82,16 +77,19 @@ public abstract class Vehiculo {
 	// Método abstracto
 	abstract String obtenerInformeMantenimiento();
 
-	public int compareTo(Vehiculo v1, Vehiculo v2) {
-		int variable;
-		
-		if (v1.getMatricula().equals(v2.getMatricula())) {
-			variable = 0;
-		} else {
-			variable = v1.getModelo().compareTo(v2.getModelo());
-		}
-		
-		return variable;
-		
+	@Override
+    public int compareTo(Vehiculo otro) {
+        return this.matricula.compareTo(otro.matricula);
+    }
+}
+
+// Clase para comparar por coste de reparación
+class comparaPrecio implements Comparator<Vehiculo> {
+
+	@Override
+	public int compare(Vehiculo uno, Vehiculo otro) {
+		int resultado = Double.compare(otro.getCosteReparacion(), uno.getCosteReparacion());
+		return resultado;
 	}
+
 }

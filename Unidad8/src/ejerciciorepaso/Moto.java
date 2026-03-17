@@ -7,6 +7,14 @@ public class Moto extends Vehiculo {
 		super(matricula, modelo, costeReparacion);
 	}
 
+	// toString
+	@Override
+	public String toString() {
+	    return "Moto - " + getModelo() +
+	           "\nMatrícula: " + getMatricula() +
+	           "\nCoste: " + getCosteReparacion();
+	}
+	
 	// Método abstracto
 	@Override
 	public String obtenerInformeMantenimiento() {

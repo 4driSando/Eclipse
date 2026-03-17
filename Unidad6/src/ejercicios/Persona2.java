@@ -25,7 +25,6 @@ public class Persona2 implements Comparable<Persona2> {
 
 	@Override
 	public int hashCode() {
-
 		System.out.println("Nombre: " + nombre + "--> " + Objects.hash(edad, nombre));
 		return Objects.hash(edad, nombre);
 	}
