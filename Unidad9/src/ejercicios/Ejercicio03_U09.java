@@ -27,10 +27,10 @@ public class Ejercicio03_U09 {
 		for (File f : directorio) {
 			if(f.isFile()) {
 				String nombre = f.getName();
+				int punto = nombre.lastIndexOf(".");
 				
-				if (nombre.contains(".")) {
-					String nuevoNombre = nombre.substring(0);
-					
+				if (punto > 0) {
+					String nuevoNombre = nombre.substring(0, punto);
 				}
 				
 			}
