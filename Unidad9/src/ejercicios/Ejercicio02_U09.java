@@ -40,7 +40,7 @@ public class Ejercicio02_U09 {
         }
 
         if (ruta.isFile()) {
-            System.out.println("[A] " + ruta.getName());
+            System.out.println("[A] " + ruta.getName() + "\nTamaño: " + ruta.length() + "kb \nÚltima modificación: " + mostrarFecha(ruta));
         } else if (ruta.isDirectory()) {
 
             File[] lista = ruta.listFiles();
@@ -48,13 +48,15 @@ public class Ejercicio02_U09 {
 
             for (File f : lista) {
                 if (f.isDirectory()) {
-                    System.out.println("[*] " + f.getName() + "\t| Tamaño: " + f.length() + "kb \t| Última modificación: " + mostrarFecha(f));
+                    System.out.println("[*] " + f.getName() + "\nTamaño: " + f.length() + "kb \nÚltima modificación: " + mostrarFecha(f));
+                    System.out.println("----------");
                 }
             }
 
             for (File f : lista) {
                 if (f.isFile()) {
-                    System.out.println("[A] " + f.getName() + "\t| Tamaño: " + f.length() + "kb \t| Última modificación: " + mostrarFecha(f));
+                    System.out.println("[A] " + f.getName() + "\nTamaño: " + f.length() + "kb \nÚltima modificación: " + mostrarFecha(f));
+                    System.out.println("----------");
                 }
             }
         }
