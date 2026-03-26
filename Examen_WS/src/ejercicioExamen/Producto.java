@@ -1,4 +1,4 @@
-package adrian_perez_sandoval_2Trimestre;
+package ejercicioExamen;
 
 import java.util.Comparator;
 import java.util.Objects;

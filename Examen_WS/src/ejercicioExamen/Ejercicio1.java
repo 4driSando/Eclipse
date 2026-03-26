@@ -1,5 +1,6 @@
-package adrian_perez_sandoval_2Trimestre;
+package ejercicioExamen;
 
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Ejercicio1 {
@@ -54,7 +55,22 @@ public class Ejercicio1 {
 			System.err.println(e.getMessage());
 		}
 
-		// Lo de eliminar los id con X no lo he sabido hacer por el Iterator		
+		// Lo de eliminar los id con X no lo he sabido hacer por el Iterator
+		Iterator<Producto> it = tienda.iterator();
+		while (it.hasNext()) {
+			Producto p = it.next();
+			if (p.getId().contains("X")) {
+				it.remove();
+			}
+		}
+		
+		Iterator<Producto> it2 = tienda2.iterator();
+		while (it2.hasNext()) {
+			Producto p2 = it2.next();
+			if (p2.getId().contains("X")) {
+				it2.remove();
+			}
+		}
 
 		// TreeSet Ordenados por nombre
 		System.out.println("PRODUCTOS ORDENADOS NATURALMENTE POR NOMBRE");

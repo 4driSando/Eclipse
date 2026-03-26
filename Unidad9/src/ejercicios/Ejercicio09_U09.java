@@ -4,28 +4,20 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Ejercicio07_U09 {
+public class Ejercicio09_U09 {
 
 	public static void main(String[] args) {
-		
-		int numMax = Integer.MIN_VALUE;
-		int numMin = Integer.MAX_VALUE;
+
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader("Documentos/numeros.txt"));
+			br = new BufferedReader(new FileReader("Documentos/alumnos_notas.txt"));
 			String linea;
-
+			String[] Alumnos = new String[10];
+			
 			while ((linea = br.readLine()) != null) {
-				int num = Integer.parseInt(linea);
 				
-				if (num > numMax) {
-					numMax = num;
-				}
-				
-				if (num < numMin) {
-					numMin = num;
-				}
-			}	
+			}
+
 			 
 		} catch (Exception e) {
 			System.err.println("Error leyendo el archivo");
@@ -36,8 +28,6 @@ public class Ejercicio07_U09 {
 				System.out.println(e.getMessage());
 			}
 		}
-		
-		System.out.println("Número máx: " + numMax);
-		System.out.println("Número min: " + numMin);
 	}
+
 }

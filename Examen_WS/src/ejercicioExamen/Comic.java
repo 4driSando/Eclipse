@@ -1,4 +1,4 @@
-package adrian_perez_sandoval_2Trimestre;
+package ejercicioExamen;
 
 public class Comic extends Producto {
 
