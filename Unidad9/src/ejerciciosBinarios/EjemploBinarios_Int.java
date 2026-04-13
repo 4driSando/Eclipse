@@ -25,7 +25,8 @@ public class EjemploBinarios_Int {
 		} catch (IOException ex) {
 			System.out.println(ex);
 		}
-		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("numeros.dat"));) {
+		
+		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("numeros.dat"))) {
 			while (true) {
 				int numero = entrada.readInt();
 				System.out.println(numero + "");

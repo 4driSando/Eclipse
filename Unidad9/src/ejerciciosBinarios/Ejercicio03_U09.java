@@ -35,7 +35,7 @@ public class Ejercicio03_U09 {
 		}
 
 		// Lectura
-		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("socios.dat"));) {
+		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("socios.dat"))) {
 
 			while (true) {
 				Socio socio = (Socio) entrada.readObject();
