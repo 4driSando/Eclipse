@@ -8,13 +8,15 @@ public class Ejercicio06_U09 {
 
 	public static void main(String[] args) {
 
-		TreeSet<String> nombres = new TreeSet<>();
+		TreeSet<String> nombres = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
 
 		// Leer fichero
 		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("nombres.dat"))) {
-			while (true) {
+			
+			while (true) {		
 				nombres.add(entrada.readUTF());
 			}
+			
 		} catch (EOFException e) {
 			// fin normal
 		} catch (IOException e) {
@@ -24,6 +26,14 @@ public class Ejercicio06_U09 {
 		// Pedir nombres
 		Scanner sc = new Scanner(System.in);
 		String nombre;
+		
+		if (nombres.isEmpty()) {
+			System.out.println("[Lista vacía]");
+		} else {
+			for (String name : nombres) {
+				System.out.println(name);
+			}
+		}
 
 		do {
 			System.out.println("Introduce un nombre:");
