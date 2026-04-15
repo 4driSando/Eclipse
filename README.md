@@ -160,8 +160,6 @@ Espacio para pruebas y experimentos adicionales. Contiene utilidades y aplicacio
 ## Espacios de Examen
 
 - **Examen_WorkSpace/**: Contiene el proyecto para el examen principal
-- **Examen_WS1/**: Primer espacio de examen con ejercicios específicos
-- **Examen_WS2/**: Segundo espacio de examen con prácticas de archivos
 
 Estos espacios están dedicados a evaluaciones y contienen código desarrollado bajo condiciones de examen.
 
@@ -235,7 +233,7 @@ Este proyecto es de uso personal y educativo. No aplica una licencia específica
 
 ---
 
-**Última actualización:** Abril 2026  
+**Última actualización:** 15 de Abril de 2026  
 **Autor:** Adrian Pérez Sandoval
 
 ¡Gracias por explorar mis ejercicios de programación! Si tienes preguntas sobre algún concepto específico, no dudes en revisar el código fuente correspondiente.
