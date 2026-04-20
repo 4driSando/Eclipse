@@ -29,7 +29,6 @@ public class Ejercicio1 {
 
 			while(true) {
 				try {
-					lectura.readObject();
 					System.out.println(lectura.readObject());
 				} catch (ClassNotFoundException e) {
 					System.out.println(e);
