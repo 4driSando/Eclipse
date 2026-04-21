@@ -4,16 +4,22 @@ public class Ejercicio1_U10 {
 
 	public static void main(String[] args) {
 		
-		Contenedor<String> cont = new Contenedor<String>();
+		Contenedor<String> cont = new Contenedor<String>(args);
 		
-		cont.insertarAlPrincipio("Hola");
+		cont.extraerDelFinal();
+		cont.insertarAlPrincipio("Zorro");
+		cont.insertarAlFinal("Adri");
+		cont.insertarAlFinal("Lhanzzz");
+		cont.insertarAlPrincipio("Cesputa");
+		
+		cont.extraerDelFinal();
+		
+		cont.extraerDelPrincipio();
+		
+		
+//		cont.ordenar();
 		
 		System.out.println(cont);
-		
-		cont.insertarAlPrincipio("Papoi");
-		
-		System.out.println(cont);
-
 
 	}
 
