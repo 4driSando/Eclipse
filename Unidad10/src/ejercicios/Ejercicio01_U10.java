@@ -1,6 +1,6 @@
 package ejercicios;
 
-public class Ejercicio1_U10 {
+public class Ejercicio01_U10 {
 
 	public static void main(String[] args) {
 		
