@@ -10,8 +10,8 @@ public class Ejercicio1 {
 
 		ArrayList<Integer> array1 = SandoUtiles.generaArrayListAleatorio(10, 1, 20);
 		ArrayList<Integer> yarra = SandoUtiles.volteaArray(array1);
-		int minimoArray1 = SandoUtiles.devuelveMinimo(array1);
-		int mediaArray1 = SandoUtiles.mediaArray(array1);
+		int minimoArray1 = SandoUtiles.minimoArrayListInteger(array1);
+		int mediaArray1 = SandoUtiles.mediaArrayListInteger(array1);
 		boolean diecinueve = SandoUtiles.estaEnArray(array1, 19);
 		int posicion = SandoUtiles.posicionNumero(array1, 19);
 

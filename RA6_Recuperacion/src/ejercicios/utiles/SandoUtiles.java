@@ -34,7 +34,7 @@ public class SandoUtiles {
 	 * @param array arrayList en el que se va a buscar el mínimo valor
 	 * @return valor más pequeño de todo el arrayList
 	 */
-	public static int devuelveMinimo(ArrayList<Integer> array) {
+	public static int minimoArrayListInteger(ArrayList<Integer> array) {
 
 		// Recojo el primer valor de la lista
 		int min = array.get(0);
@@ -53,6 +53,17 @@ public class SandoUtiles {
 		// Devuelvo el valor minimo
 		return min;
 	}
+	
+	public static double minimoArrayListDouble(ArrayList<Double> arrayList) {
+		double min = arrayList.get(0);
+
+		for (int i = 0; i < arrayList.size(); i++) {
+			if (arrayList.get(i) < min) {
+				min = arrayList.get(i);
+			}
+		}
+		return min;
+	}
 
 	/**
 	 * Encuentra el máximo valor de todo el arrayList que se le ha pasado por
@@ -61,7 +72,7 @@ public class SandoUtiles {
 	 * @param array arrayList en el que se va a buscar el mínimo valor
 	 * @return valor más grande de todo el arrayList
 	 */
-	public static int devuelveMaximo(ArrayList<Integer> array) {
+	public static int maximoArrayListInteger(ArrayList<Integer> array) {
 
 		// Recojo el primer valor de la lista
 		int max = array.get(0);
@@ -80,6 +91,17 @@ public class SandoUtiles {
 		// Devuelvo el valor minimo
 		return max;
 	}
+	
+	public static double maximoArrayListDouble(ArrayList<Double> arrayList) {
+		double max = arrayList.get(0);
+
+		for (int i = 0; i < arrayList.size(); i++) {
+			if (arrayList.get(i) > max) {
+				max = arrayList.get(i);
+			}
+		}
+		return max;
+	}
 
 	/**
 	 * Calcula la media de la suma de todos los valores del array
@@ -87,7 +109,7 @@ public class SandoUtiles {
 	 * @param array arrayList en el que se va a calcular la media
 	 * @return double con la media
 	 */
-	public static int mediaArray(ArrayList<Integer> array) {
+	public static int mediaArrayListInteger(ArrayList<Integer> array) {
 
 		// Declaro los enteros que me van a hacer falta
 		int total = 0;
@@ -104,6 +126,17 @@ public class SandoUtiles {
 		int media = total / array.size();
 
 		// Devuelvo la media
+		return media;
+	}
+	
+	public static double mediaArrayListDouble(ArrayList<Double> arrayList) {
+		double media, suma = 0;
+
+		for (int i = 0; i < arrayList.size(); i++) {
+			suma += arrayList.get(i);
+		}
+		media = suma / arrayList.size();
+
 		return media;
 	}
 
