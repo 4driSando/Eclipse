@@ -11,7 +11,7 @@ public class Ejercicio49_U02 {
 		System.out.println("Random--Random^2");
 
 		for (int i = 0; i < num.length; i++) {
-			num[i] = (int) (Math.random() * (99 - 10 + 1) + 10);
+			num[i] = (int) (10 + Math.random() * (99 - 10 + 1));
 			num2[i] = num[i] * num[i];
 			System.out.println(num[i] + "\t" + num2[i]);
 		}
