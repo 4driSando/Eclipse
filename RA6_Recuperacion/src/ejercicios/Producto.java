@@ -21,12 +21,11 @@ public class Producto {
 	}
 
 	public void setNombre(String nombre) {
-
-		if (nombre.length() <= 1 || nombre.equals(null)) {
-			throw new IllegalArgumentException("Nombre no válido");
-		} else {
-			this.nombre = nombre;
-		}
+	    if (nombre == null || nombre.length() < 1) {
+	        throw new IllegalArgumentException("Nombre no válido");
+	    } else {
+	        this.nombre = nombre;
+	    }
 	}
 
 	public void setCantidad(int cantidad) throws Exception {
@@ -46,7 +45,7 @@ public class Producto {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cantidad, nombre);
+		return Objects.hash(nombre);
 	}
 
 	@Override
@@ -58,7 +57,9 @@ public class Producto {
 		if (getClass() != obj.getClass())
 			return false;
 		Producto other = (Producto) obj;
-		return cantidad == other.cantidad && Objects.equals(nombre, other.nombre);
+		return Objects.equals(nombre.toLowerCase(), other.nombre.toLowerCase());
 	}
+
+
 
 }
