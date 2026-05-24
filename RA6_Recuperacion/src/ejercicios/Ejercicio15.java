@@ -29,64 +29,55 @@ public class Ejercicio15 {
 			System.out.println("6.- Listar productos junto con stock");
 			System.out.println("7.- Salir");
 			respuesta = sc.nextInt();
+			sc.nextLine();
 
 			switch (respuesta) {
 			case 1:
-				System.out.println("Nombre del producto");
-				String nombre = sc.nextLine();
-				sc.next();
-				
-				System.out.println("Cantidad (Si el producto ya existe, se sumará la cantidad al stock del producto)");
-				int cantidad = sc.nextInt();
-				
-				Producto nuevo = null;
-				
-				// Corregir error al instanciar producto
-				
 				try {
-					nuevo = new Producto(nombre, cantidad);
+					System.out.println("Nombre del producto");
+					String nombre = sc.nextLine();
+
+					System.out.println(
+							"Cantidad (Si el producto ya existe, se sumará la cantidad al stock del producto)");
+					int cantidad = sc.nextInt();
+
+					Producto nuevo = new Producto(nombre, cantidad);
+					lista.add(nuevo);
+
+					// Corregir manera de buscar por que así no busca
+
 				} catch (Exception e) {
 					System.err.println("Error: " + e.getMessage());
 				}
-				
-				if(lista.contains(nuevo)) {
-					try {
-						nuevo.setCantidad(nuevo.getCantidad() + cantidad);
-					} catch (Exception e) {
-						System.err.println("Error: " + e.getMessage());
-					}
-				} else {
-					lista.add(nuevo);
-				}
-				
+
 				break;
-				
+
 			case 2:
 
 				break;
-			
+
 			case 3:
 
 				break;
-			
+
 			case 4:
 
 				break;
-			
+
 			case 5:
 
 				break;
-			
+
 			case 6:
 				for (Producto producto : lista) {
 					System.out.println(producto);
 				}
 				break;
-			
+
 			case 7:
 
 				break;
-				
+
 			default:
 				break;
 			}

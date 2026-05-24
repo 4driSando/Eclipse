@@ -21,7 +21,7 @@ public class Producto {
 	}
 
 	public void setNombre(String nombre) {
-	    if (nombre == null || nombre.length() < 1) {
+	    if (nombre == null || nombre.isBlank()) {
 	        throw new IllegalArgumentException("Nombre no válido");
 	    } else {
 	        this.nombre = nombre;
