@@ -5,7 +5,7 @@ public class Ejercicio3 {
 	public static void main(String[] args) {
 		// Mínimo y mámimo de un array
 
-		int[] array = claude.facil.Ejercicio1.generaArray(4, 1, 5);
+		int[] array = Ejercicio1.generaArray(4, 1, 5);
 
 		for (int i : array) {
 			System.out.print(i + " ");
